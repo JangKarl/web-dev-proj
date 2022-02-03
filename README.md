@@ -1,2 +1,2 @@
 # web-dev-proj
- Group project :)))))))
+ School Group project :)))))))
