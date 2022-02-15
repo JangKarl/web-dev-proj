@@ -1,0 +1,4 @@
+(tbh i just wanna try the .gitignore function XD)
+~Let's put out notes here guys:
+    - When should we start?? 
+    - Do we need to make branches??
