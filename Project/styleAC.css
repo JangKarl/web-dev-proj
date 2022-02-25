@@ -162,7 +162,13 @@ input[type="submit"]:hover{
 }
 .reg_container h1{
     text-align: left;
-    padding: 20px 20px 20px 30px;
+    padding: 20px 0px 0px 30px;
+    /* border-bottom: 1px solid silver; */
+}
+.reg_container p{
+    text-align: left;
+    padding: 10px 10px 10px 30px;
+    color: #adadad;
     border-bottom: 1px solid silver;
 }
 .reg_closebtn{
