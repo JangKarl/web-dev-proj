@@ -45,49 +45,78 @@
             </div>
         </form>
     </div>
-
-    <div id="reg_modal" class="modal">
-        <div class="reg_container">
-            <span class="reg_closebtn">&times;</span>
-            <h1>Sign Up</h1>
-            <p>Please fill in this form.</p>
-            <form action="" method="post">
-                <div class="txtfield2">
-                    <input type="text" required>
-                    <span></span>
-                    <label>First Name</label>
+    <!-- Register Containter -->
+    <div id="mainpopup" class="mainpopup">
+        <div class="regpopup">
+            <div class="reg_container">
+                <span class="reg_closebtn">&times;</span>
+                <div class="title">
+                    <h1>Sign Up!</h1>
+                    <p>Please fill in the form</p>
                 </div>
-                <div class="txtfield2">
-                    <input type="text" required>
-                    <span></span>
-                    <label>Address</label>
+                <div class="reg_content">
+                    <form action="#">
+                        <div class="userinfo">
+                            <div class="inputbox">
+                              <span class="info">First Name</span>
+                              <input type="text" placeholder="Enter your First name" required>
+                            </div>
+                            <div class="inputbox">
+                              <span class="info">Last Name</span>
+                              <input type="text" placeholder="Enter your Last name" required>
+                            </div>
+                            <div class="inputbox">
+                              <span class="info">Email</span>
+                              <input type="text" placeholder="Enter your email" required>
+                            </div>
+                            <div class="inputbox">
+                              <span class="info">Address</span>
+                              <input type="text" placeholder="Enter your Address" required>
+                            </div>
+                            <div class="inputbox">
+                              <span class="info">Password</span>
+                              <input type="text" placeholder="Enter your password" required>
+                            </div>
+                            <div class="inputbox">
+                              <span class="info">Confirm Password</span>
+                              <input type="text" placeholder="Confirm your password" required>
+                            </div>
+                          </div>
+                          <div class="genderinfo">
+                            <input type="radio" name="gender" id="dot-1">
+                            <input type="radio" name="gender" id="dot-2">
+                            <input type="radio" name="gender" id="dot-3">
+                            <span class="gendertitle">Gender</span>
+                            <div class="category">
+                              <label for="dot-1">
+                              <span class="dot one"></span>
+                              <span class="gender">Male</span>
+                            </label>
+                            <label for="dot-2">
+                              <span class="dot two"></span>
+                              <span class="gender">Female</span>
+                            </label>
+                            <label for="dot-3">
+                              <span class="dot three"></span>
+                              <span class="gender">Prefer not to say</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="button">
+                            <input type="submit" value="Register">
+                          </div>
+                    </form>
                 </div>
-                <div class="txtfield2">
-                    <input type="text" required>
-                    <span></span>
-                    <label>Email</label>
-                </div>
-                <div class="txtfield2">
-                    <input type="text" required>
-                    <span></span>
-                    <label>Password</label>
-                </div>
-                <div class="txtfield2">
-                    <input type="text" required>
-                    <span></span>
-                    <label>Confirm Password</label>
-                </div>
-                <input class="reg_signup" type="submit" value="Sign Up">
-            </form>
+            </div>
         </div>
     </div>
 
     <script>
-        var reg_modal = document.getElementById('reg_modal');
+        var mainpopup = document.getElementById('mainpopup');
         var reg_closebtn = document.getElementsByClassName('reg_closebtn')[0];
         reg_closebtn.addEventListener('click', regclosemodal);
-        function regopenmodal(){reg_modal.style.display = 'block';}
-        function regclosemodal(){reg_modal.style.display = 'none';}
+        function regopenmodal(){mainpopup.style.display = 'block';}
+        function regclosemodal(){mainpopup.style.display = 'none';}
     </script>
 
 </body>
