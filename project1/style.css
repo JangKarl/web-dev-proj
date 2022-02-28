@@ -1,0 +1,574 @@
+:root {
+    --green: #038a00;
+    --black: #123524;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 6.5rem;
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+.header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    position: relative;
+}
+
+    .header .navbar a {
+        padding: .5rem 1.5rem;
+        font-size: 2rem;
+        border-radius: .5rem;
+        color: var(--black);
+    }
+
+        .header .navbar a:hover {
+            background: var(--green);
+            color: #fff;
+        }
+
+.logo {
+    color: var(--black);
+    font-weight: bolder;
+    font-size: 3rem;
+}
+
+    .logo img {
+        padding-right: 5px;
+        max-width: 30px;
+    }
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #f3f3f3;
+}
+
+    .home .image {
+        flex: 1 1 30rem;
+        padding-top: 2rem;
+    }
+
+        .home .image img {
+            width: 100%;
+        }
+
+    .home .content {
+        flex: 1 1 50rem;
+    }
+
+        .home .content h3 {
+            font-size: 5rem;
+            color: var(--black);
+        }
+
+    .home .btn {
+        display: inline-block;
+        text-align: center;
+        background-color: rgb(3, 138, 0);
+        color: #fff;
+        font-size: 30px;
+        padding: 12px 75px;
+        margin: 10px 75px;
+        border-radius: 50px;
+        box-shadow: 5px 5px 20px #5e5e5e;
+    }
+
+h1 {
+    font-family: 'Rowdies', cursive;
+    color: #038a00;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.heading {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1rem;
+    font-size: 3.5rem;
+    padding-bottom: 2rem;
+}
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#category {
+    padding: 5rem;
+}
+
+#contact {
+    padding: 5rem;
+}
+
+.box-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+}
+
+    .box-container .box {
+        border: .1rem solid rgba(0,0,0,.3);
+        border-radius: .5rem;
+        text-align: center;
+        padding: 2rem;
+        flex: 1 1 25rem;
+    }
+
+        .box-container .box img {
+            width: 20rem;
+            margin: .5rem 0;
+        }
+
+        .box-container .box h3 {
+            font-size: 3.5rem;
+            color: var(--black);
+        }
+
+        .box-container .box .btn {
+            display: block;
+        }
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: rgb(3, 138, 0);
+    color: #fff;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    font-family: 'Rowdies', cursive;
+}
+
+    .btn:hover {
+        background: var(--black);
+    }
+
+.contact form {
+    text-align: center;
+    padding: 10rem;
+    border: .1rem solid rgba(0,0,0,.3);
+}
+
+    .contact form .inputBox {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+        .contact form .inputBox input, .contact form textarea {
+            padding: 1rem;
+            font-size: 1.7rem;
+            background: #f7f7f7;
+            text-transform: none;
+            margin: 1rem 0;
+            border: .1rem solid rgba(0,0,0,.3);
+            width: 45%;
+        }
+
+    .contact form textarea {
+        height: 25rem;
+        resize: none;
+        width: 100%;
+    }
+
+.footer {
+    padding-top: 5%;
+    margin: auto;
+    text-align: center;
+    background-color: #f3f3f3;
+}
+
+    .footer .fb-share {
+        background-color: #4267B2; /*facebook color*/
+        color: #ffffff;
+        font-family: 'Rowdies', cursive;
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 50px;
+    }
+
+    .footer .fb-share-des {
+        padding: 20px;
+    }
+
+div.products {
+    padding: 2rem;
+    background-color: #f3f3f3;
+}
+
+.box .price {
+    font-size: 20px
+}
+
+.box span {
+    font-size: 15px
+}
+
+#about img {
+    flex: 1 1 30rem;
+    width: 100%;
+}
+
+#about .home .overlay {
+    position: absolute;
+    top: 80px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* account login stylesheet starts */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#account .nav {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+    #account .nav .logo {
+        padding: 0px 50px;
+    }
+
+#account .nav {
+    flex: 1;
+    text-align: right;
+}
+
+#account nav ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+    #account nav ul li {
+        display: inline-block;
+        margin-right: 50px;
+    }
+
+#account a {
+    text-decoration: none;
+    color: #6d6d6d;
+}
+
+/* login */
+#account {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #aaeb90,#d9fcd8);
+    height: 100vh;
+    overflow: hidden;
+}
+
+    #account .lg_container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+
+        #account .lg_container h1 {
+            text-align: center;
+            padding: 20px 0 20px 0;
+            border-bottom: 1px solid silver;
+        }
+
+        #account .lg_container form {
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+
+    #account form .txtfield {
+        position: relative;
+        border-bottom: 2px solid #adadad;
+        margin: 30px 0;
+    }
+
+    #account .txtfield input {
+        width: 100%;
+        padding: 0 5px;
+        height: 40px;
+        font-size: 16px;
+        border: none;
+        background: none;
+        outline: none;
+    }
+
+    #account .txtfield label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        color: #adadad;
+        transform: translateY(-50%);
+        font-size: 16px;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    #account .txtfield span::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: #038a00;
+        transition: .5s;
+    }
+
+    #account .txtfield input:focus ~ label,
+    #account .txtfield input:valid ~ label {
+        top: -5px;
+        color: #038a00;
+    }
+
+    #account .txtfield input:focus ~ span::before,
+    #account .txtfield input:valid ~ span::before {
+        width: 100%;
+    }
+
+    #account .fpass {
+        margin: -5px 0 20px 5px;
+        color: #038a00;
+        cursor: pointer;
+    }
+
+        #account .fpass:hover {
+            text-decoration: underline;
+        }
+
+    #account input[type="submit"] {
+        width: 100%;
+        height: 50px;
+        border: 1px solid;
+        background: #aef692;
+        border-radius: 25px;
+        font-size: 18px;
+        color: #ffffff;
+        font-weight: 700;
+        cursor: pointer;
+        outline: none;
+    }
+
+        #account input[type="submit"]:hover {
+            border-color: #63ff25;
+            background: #96ff96;
+            transition: .5s;
+        }
+
+    #account .signup_link {
+        margin: 30px 0;
+        text-align: center;
+        font-size: 16px;
+        color: #666666;
+    }
+
+        #account .signup_link a {
+            color: #038a00;
+            text-decoration: none;
+        }
+
+            #account .signup_link a:hover {
+                text-decoration: underline;
+            }
+    /* login */
+
+    /* register */
+    #account .mainpopup {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    #account .regpopup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 10px;
+    }
+
+    #account .reg_container {
+        max-width: 1000px;
+        width: 100%;
+        padding: 25px 30px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0,0.15);
+    }
+
+    #account .reg_closebtn {
+        float: right;
+        margin: 50px;
+        font-size: 40px;
+        color: #adadad;
+    }
+
+        #account .reg_closebtn:hover {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #account .reg_closebtn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    #account .reg_container .title p {
+        padding: 10px 0 10px 0;
+        color: #8a8989;
+        border-bottom: 1px solid silver;
+    }
+
+    #account .reg_container .title::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 30px;
+        border-radius: 5px;
+    }
+
+    #account .reg_content form .userinfo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 20px 0 12px 0;
+    }
+
+    #account form .userinfo .inputbox {
+        margin-bottom: 15px;
+        width: calc(100% / 2 - 20px);
+    }
+
+    #account form .inputbox span.info {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    #account .userinfo .inputbox input {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        font-size: 16px;
+        border-radius: 5px;
+        padding-left: 15px;
+        border: 1px solid #ccc;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+    }
+
+        #account .userinfo .inputbox input:focus,
+        #account .userinfo .inputbox input:valid {
+            border-color: #32cd32;
+        }
+
+    #account form .genderinfo .gendertitle {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    #account form .category {
+        display: flex;
+        width: 80%;
+        margin: 14px 0;
+        justify-content: space-between;
+    }
+
+        #account form .category label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+            #account form .category label .dot {
+                height: 18px;
+                width: 18px;
+                border-radius: 50%;
+                margin-right: 10px;
+                background: #d9d9d9;
+                border: 5px solid transparent;
+                transition: all 0.3s ease;
+            }
+
+    #account #dot-1:checked ~ .category label .one,
+    #account #dot-2:checked ~ .category label .two,
+    #account #dot-3:checked ~ .category label .three {
+        background: #32cd32;
+        border-color: #d9d9d9;
+    }
+
+    #account form input[type="radio"] {
+        display: none;
+    }
+
+    #account form .button {
+        height: 45px;
+        margin-top: 35px;
+    }
+
+        #account form .button input {
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: none;
+            color: #fff;
+            background: linear-gradient(135deg, #32cd32, #90EE90);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+            #account form .button input:hover {
+                background: linear-gradient(135deg, #00f600, #b7f6b7);
+            }
+
+/* register */
+/* account login stylesheet ends */
+
