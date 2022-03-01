@@ -11,7 +11,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 p {
-    font-size: 16px;
+    font-size: 20px;
     color: #6d6d6d;
 }
 
@@ -240,25 +240,26 @@ div.products {
     margin: auto;
     text-align: center;
     background-color: #f3f3f3;
-    min-height: 600px;
+    min-height: 300px;
 }
-
-    .footer .fb-share {
-        background-color: #4267B2; /*facebook color*/
-        color: #ffffff;
-        font-family: 'Rowdies', cursive;
-        padding: 20px;
-        font-size: 30px;
-        border-radius: 50px;
+    .footer .col-2{
+        padding: 0px 70px;
+    }
+    .footer .col-2 a{
+        font-size: 50px;
+        color: #038a00;
+        margin: 15px;
+    }
+    .footer .col-2 a:hover{
+        color: #123524;
+    }
+    .footer .col-2 .icon{
+        font-size: 20px;
+        text-align: left;
+        margin: 0px 15px;
+        color: #038a00;
     }
 
-        .footer .fb-share:hover{
-            background-color: #2f4b82;
-        }
-
-    .footer .fb-share-des {
-        padding: 20px;
-    }
 /*End of style container & content for .footer*/
 
     .container .title{
@@ -283,7 +284,7 @@ div.products {
         text-align: center;
     }
     .col-3 p{
-        font-size: 16px;
+        font-size: 20px;
         text-transform: none;
         text-align: center;
     }
