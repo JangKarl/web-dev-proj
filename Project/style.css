@@ -260,3 +260,30 @@ div.products {
         padding: 20px;
     }
 /*End of style container & content for .footer*/
+
+    .container .title{
+        text-align: center;
+        padding: 40px;
+    }
+
+    .container .line{
+        display: block;
+        border-bottom: solid #038a00 5px;
+        max-width: 200px;
+        margin: auto;
+    }
+
+.col-3{
+    flex-basis: 33%;
+    min-width: 150px;
+}
+    .col-3 h3{
+        font-size: 20px;
+        margin: 20px 0;
+        text-align: center;
+    }
+    .col-3 p{
+        font-size: 16px;
+        text-transform: none;
+        text-align: center;
+    }
