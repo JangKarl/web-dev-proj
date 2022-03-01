@@ -11,6 +11,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 p {
+    font-size: 16px;
     color: #6d6d6d;
 }
 
@@ -24,6 +25,8 @@ h1 {
 /*Start of Style container for .nav-bar*/
 .nav-bar {
     display: flex;
+    position: relative;
+    box-shadow: 0 0.5rem 1rem #00000023;
     align-items: center;
     padding: 20px;
     background-color: #fff;
@@ -52,7 +55,6 @@ nav {
         nav ul li a {
             text-decoration: none;
             font-size: 20px;
-            color: #6d6d6d;
             box-shadow: inset 0 0 0 0 #038a00;
             color: #038a00;
             padding: 5px 10px;
@@ -99,18 +101,22 @@ nav {
     .col-2 p {
         max-width: 400px;
     }
-
+    
 .button {
     display: inline-block;
     background-color: rgb(3, 138, 0);
     color: #fff;
     font-size: 30px;
     padding: 12px 75px;
-    margin: 25px 75px;
+    margin: 25px 25px;
     border-radius: 50px;
     box-shadow: 5px 5px 20px #5e5e5e;
     font-family: 'Rowdies', cursive;
 }
+    .button:hover{
+        background: #123524;
+    }
+
 /*End of style container & content for .container*/
 
 /*Start of style container & content for .container-2*/
@@ -127,19 +133,19 @@ nav {
     min-width: 300px;
     border-radius: .5rem;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     flex: 1 1 20rem;
 }
 
     .col-4 .mini-container {
-        background-color: #038a00;
-        padding: 20px;
-        margin: 30px 20px;
+        padding: 15px;
+        margin: 20px 20px;
+        border: solid #038a00 .2rem;
         border-radius: 50px;
     }
 
         .col-4 .mini-container img {
-            width: 10rem;
+            width: 12rem;
             margin: .5rem 0;
         }
 
@@ -234,6 +240,7 @@ div.products {
     margin: auto;
     text-align: center;
     background-color: #f3f3f3;
+    min-height: 600px;
 }
 
     .footer .fb-share {
@@ -244,6 +251,10 @@ div.products {
         font-size: 30px;
         border-radius: 50px;
     }
+
+        .footer .fb-share:hover{
+            background-color: #2f4b82;
+        }
 
     .footer .fb-share-des {
         padding: 20px;
