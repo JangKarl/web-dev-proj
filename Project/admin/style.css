@@ -8,9 +8,9 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-body{
-    /* background: linear-gradient(135deg,#8fff8f, #e0ffe0); */
-}
+/* body{
+    /* background: linear-gradient(135deg,#8fff8f, #e0ffe0);
+} */
 .container{
     display: flex;
 }
@@ -168,7 +168,6 @@ a:hover{
 }
 .main-skills .card button:hover{
     background: rgba(223, 70, 15, 0.856)
-
 }
 .main-skills .card i{
     font-size: 22px;
