@@ -9,7 +9,7 @@
     font-family: "Poppins", sans-serif;
 }
 body{
-    background: linear-gradient(135deg,#8fff8f, #e0ffe0);
+    /* background: linear-gradient(135deg,#8fff8f, #e0ffe0); */
 }
 .container{
     display: flex;
@@ -124,7 +124,9 @@ a:hover{
     width: 100%;
 }
 .main-top h1{
-    color: rgb(241, 253, 236);
+    color: green;
+    border-bottom: 2px solid silver;
+    /* color: rgb(241, 253, 236); */
 }
 .main-top i{
     position: absolute;
