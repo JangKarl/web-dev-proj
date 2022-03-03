@@ -7,6 +7,8 @@
             <h1>PORTAL | MANAGE CATEGORY </h1>
             <i class="fas fa-user-cog"></i>
         </div>
+
+        <a href="#">Add category</a>
         <!-- Main body -->  
         <div class="columns">
             <h1>5</h1>

@@ -7,6 +7,8 @@
             <h1>PORTAL | MANAGE INVENTORY  </h1>
             <i class="fas fa-user-cog"></i>
         </div>
+
+        <a href="#">Add inventory</a>
          <!-- Main body -->   
         <div class="columns">
             <h1>5</h1>
