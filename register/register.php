@@ -2,7 +2,7 @@
 
 session_start();
 
-$conn = new mysqli('localhost', 'root', '', 'accounts');
+$conn = new mysqli('localhost', 'root', '', 'foogs_db');
 
 $first = $_POST['firstname'];
 $last = $_POST['lastname'];
@@ -17,7 +17,7 @@ if($conn -> connect_error){
 }
 else{
     if($password === $confirm){
-        $stmt = $conn -> prepare("insert into users(firstname, lastname, email, address, password, gender) values (?, ?, ?, ?, ?, ?)");
+        $stmt = $conn -> prepare("insert into user(first_name, last_name, email, address, password, gender) values (?, ?, ?, ?, ?, ?)");
         $stmt -> bind_param("ssssss", $first, $last, $email, $address, $password, $gender);
         $stmt -> execute();
         $_SESSION['firstname'] = $first;
@@ -26,7 +26,7 @@ else{
         $conn -> close();
     }
     else{
-        header('location:registerError.php');
+        header('location:login.php');
     }
 }
 ?>
