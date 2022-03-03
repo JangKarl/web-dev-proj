@@ -175,7 +175,26 @@ a:hover{
 }
 /* table */
 
+.success{
+    color:rgb(75, 110, 75);
+}
 
+.failed{
+    color: red;
+}
+
+
+/*Login admin*/
+.login{
+    border: 1px solid grey;
+    width: 20%;
+    margin: 10% auto;
+    padding: 2%;
+    text-align: center;
+}
+    .login h1{
+        text-align: center;
+    }
 /* .main-skills{
     display: flex;
     margin-top: 20px;
