@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* navigation bar starts */
 *{
     margin: 0;
     padding: 0;
@@ -8,9 +9,6 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-/* body{
-    /* background: linear-gradient(135deg,#8fff8f, #e0ffe0);
-} */
 .container{
     display: flex;
 }
@@ -18,32 +16,29 @@ nav{
     position: relative;
     top: 0;
     bottom: 0;
-    height: 100vh;
+    height: 97vh;
     left: 0;
     background: #fff;
     width: 280px;
     overflow: hidden;
     box-shadow: 0 20px 35px rgba(0,0,0,0.1);
-
 }
 .logo{
     text-align: center;
     display: flex;
-    margin: 10 px 0 0 10px;
-
-}
-.logo{
-    text-align: center;
-    display: flex;
-    margin: 10 px 0 0 10px;
-
+    margin: 10px 0;
 }
 .logo img{
-    margin-left: 75px;
+    margin-left: 80px;
     margin-top: 5px;
     width: 60px;
     height: 60px;
+    cursor: pointer;
     /* border-radius: 20%; */
+}
+.logo:hover{
+    background: white;
+    cursor: default;
 }
 .logo span{
     font-weight: bold;
@@ -89,7 +84,6 @@ nav .fa{
     margin-left: 10px;
     text-align: center;
     color: green;
-
 }
 .nav-title{
     position: relative;
@@ -107,14 +101,26 @@ nav .fa{
 }
 a:hover{
     background: #eee;
-
 }
 .logout{
     position: absolute;
     bottom: 0;
 }
+/* navigation bar ends */
+
+/* footer bar starts */
+.footer{
+    background-color: rgb(75, 110, 75);
+    height: 3vh;
+    color: white;
+}
+.footer-title{
+    text-align: center;
+}
+/* footer bar ends */
+
 /* mainsection */
-.main{
+.main-content{
     position: relative;
     padding: 20px;
     width: 100%;
@@ -122,11 +128,6 @@ a:hover{
 .main-top{
     display: flex;
     width: 100%;
-}
-.main-top h1{
-    color: green;
-    border-bottom: 2px solid silver;
-    /* color: rgb(241, 253, 236); */
 }
 .main-top i{
     position: absolute;
@@ -136,7 +137,42 @@ a:hover{
     /* color: rgb(110, 109, 109); */
     cursor: pointer;
 }
-.main-skills{
+.main-top h1{
+    color: green;
+    border-bottom: 2px solid silver;
+    cursor: default;
+    /* color: rgb(241, 253, 236); */
+}
+.columns{
+    width: 22%;
+    height: 25%;
+    background-color: rgb(204, 204, 204);
+    margin: 1%;
+    padding: 2%;
+    float: left;
+    text-align: center;
+}
+.main-btitle{
+    text-align: center;
+}
+/* table */
+.tbl-full{
+    width: 100%;
+    margin-left: 5px;
+}
+.tbl-full tr th{
+    border: 1px solid gray;
+    text-align: left;
+    padding: 2px 5px 2px ;
+}
+.tbl-full tr td{
+    border-bottom: 2px solid rgb(151, 151, 151);
+    padding: 1%;
+}
+/* table */
+
+
+/* .main-skills{
     display: flex;
     margin-top: 20px;
 
@@ -173,9 +209,9 @@ a:hover{
     font-size: 22px;
     padding: 10px;
 
-}
+} */
 /* Course */
-.main-course{
+/* .main-course{
     margin-top: 20px;
     text-transform: capitalize;
 
@@ -242,4 +278,4 @@ a:hover{
 }
 .js{
     color: rgb(28, 98, 179);
-}
+} */
