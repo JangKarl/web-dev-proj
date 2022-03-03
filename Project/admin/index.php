@@ -8,7 +8,14 @@
             <h1>PORTAL | ADMIN DASHBOARD  </h1>
             <i class="fas fa-user-cog"></i>
         </div>
-         
+        <br>
+            <?php
+                if(isset($_SESSION['login'])){
+                    echo $_SESSION['login'];
+                    unset($_SESSION['login']);
+                }
+            ?>
+            <br>
         <!-- Main body -->
         <div class="columns">
             <h1>5</h1>

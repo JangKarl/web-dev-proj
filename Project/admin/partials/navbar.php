@@ -1,5 +1,6 @@
 <?php
     include("../config/constant.php");
+    include("login-check.php");
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +48,7 @@
                     <i class="fas fa-question-circle"></i>
                     <span class="nav-item">Help</span>
                 </a></li>
-                <li><a href="#" class="logout">
+                <li><a href="../admin/logout.php" class="logout">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="nav-item">Logout</span>
                 </a></li>           

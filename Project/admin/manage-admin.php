@@ -19,6 +19,28 @@
                 echo $_SESSION['add']; //Displaying session message
                 unset($_SESSION['add']); //Removing session message
             }
+            if(isset($_SESSION['delete'])){
+                echo $_SESSION['delete'];//Displaying session message
+                unset($_SESSION['delete']);//Removing session message
+            }
+            if(isset($_SESSION['update'])){
+                echo $_SESSION['update'];//Displaying session message
+                unset($_SESSION['update']);//Removing session message
+            }
+            if(isset($_SESSION['user-not-found'])){
+                echo $_SESSION['user-not-found']; //Displaying session message
+                unset($_SESSION['user-not-found']);//Removing session message
+            }
+            if(isset($_SESSION['pwd-not-match'])){
+                echo $_SESSION['pwd-not-match']; //Displaying session message
+                unset($_SESSION['pwd-not-match']);//Removing session message
+            }
+            if(isset($_SESSION['change-pwd'])){
+                echo $_SESSION['change-pwd']; //Displaying session message
+                unset($_SESSION['change-pwd']);//Removing session message                
+            }
+
+
         ?>
         <br>
         <br>
@@ -31,7 +53,6 @@
                 <th>E-mail</th>
                 <th>Address</th>
                 <th>Action</th>
-                <th></th>
             </tr>
             
             <?php
@@ -67,8 +88,11 @@
                                 <td><?php echo $last_name?></td>
                                 <td><?php echo $email?></td>
                                 <td><?php echo $address?></td>
-                                <td><a href="#" class="secondary-btn">Update Admin</a></td>
-                                <td><a href="#" class="secondary-btn">Delete Admin</a></td>
+                                <td>
+                                    <a href="update-password.php?id=<?php echo$id;?>" class="secondary-btn">Change Password</a>
+                                    <a href="update-admin.php?id=<?php echo$id;?>" class="secondary-btn">Update Admin</a>
+                                    <a href="delete-admin.php?id=<?php echo$id;?>" class="secondary-btn">Delete Admin</a>
+                                </td>
                             </tr>
                             <?php
 

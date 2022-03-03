@@ -86,21 +86,17 @@
             //Data inserted
 
             //Session variable to display message
-            $_SESSION['add'] = "Admin Added Successfully";
+            $_SESSION['add'] = "<div class='success'> Admin Added Successfully </div>";
 
             //Redirect Page Manage Admin
             header('location:manage-admin.php');
         }else{
             //Session variable to display message
-            $_SESSION['add'] = "Failed to add admin";
+            $_SESSION['add'] = "<div class='failed'> Failed to Add Admin </div>";
 
             //Redirect Page Manage Admin
             header('location:add-admin.php');
         }
-
-
-
-
     }else{
         // Button not clicked
     }
