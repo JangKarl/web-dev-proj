@@ -171,30 +171,116 @@ a:hover{
 }
 
 .tbl-30{
-    width: 30%;
+    width: 50%;
 }
 /* table */
 
+/*SESSION MESSAGE*/
 .success{
-    color:rgb(75, 110, 75);
+    color: green;
 }
 
 .failed{
     color: red;
 }
-
+.error{
+    color: rgb(181, 191, 0);
+}
+td input{
+    border-bottom: solid grey 0.15px;
+}
 
 /*Login admin*/
 .login{
+    border-radius: 10px;
     border: 1px solid grey;
     width: 20%;
     margin: 10% auto;
     padding: 2%;
     text-align: center;
+    box-shadow: 0px 5px 10px rgb(151, 151, 151);
 }
     .login h1{
         text-align: center;
     }
+
+    .login p{
+        text-align: left;
+        margin: 1% 0;
+    }
+    .login input{
+        width: 100%;
+        border-bottom: solid black .10px;
+    }
+
+    .login .login-btn{
+        border: none;
+        background-color: #028a0082;
+        color: #fff;
+        padding: 1% 25%;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    .login .login-btn:hover{
+        background-color: #038a00;
+        color: #fff;
+        padding: 1% 25%;
+        border-radius: 15px;
+    }
+
+/*Manage Admin*/
+.secondary-btn-change{
+    background-color: #028a00b5;
+    margin: 5px;
+    color: #fff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 1%;
+    
+}
+
+.secondary-btn-change:hover{
+    background-color: #038a00;
+}
+.secondary-btn-update{
+    background-color: #002e8ab5;
+    margin: 5px;
+    color: #fff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 1%;
+}
+
+.secondary-btn-update:hover{
+    background-color: #00278a;
+}
+
+.secondary-btn-delete{
+    background-color: #8a0000b5;
+    margin: 5px;
+    color: #fff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 1%;
+}
+
+.secondary-btn-delete:hover{
+    background-color: #8a0000;
+}
+.secondary-btn-add{
+    background-color: #ffae00;
+    margin: 5px;
+    color: #fff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 1%;
+}
+
+.secondary-btn-add:hover{
+    background-color: #ce8d00e4;
+}
+
 /* .main-skills{
     display: flex;
     margin-top: 20px;

@@ -26,9 +26,9 @@
             <br>
             <!--Login Form-->
             <form action="" method="POST">
-                Email: <br>
+                <p>Email:</p>
                 <input type="email" name="email" placeholder="Enter email"> <br>
-                Password: <br>
+                <p>Password:</p>
                 <input type="password" name="password" placeholder="Enter password"> <br> <br>
 
                 <input type="submit" name="submit" value="Login" class="login-btn">

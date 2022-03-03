@@ -10,7 +10,7 @@
         <!-- Main body -->
         <br><br>
             <div class="main-btitle">
-                <h1>Registered Users</h1>
+                <h1>Registered Admins</h1>
             </div>
         <br>
         
@@ -44,7 +44,7 @@
         ?>
         <br>
         <br>
-        <a href="add-admin.php">Add admin</a>
+        <a href="add-admin.php" class="secondary-btn-add">Add admin</a>
         <table class="tbl-full">
             <tr>
                 <th>No.</th>
@@ -87,11 +87,11 @@
                                 <td><?php echo $first_name?></td>
                                 <td><?php echo $last_name?></td>
                                 <td><?php echo $email?></td>
-                                <td><?php echo $address?></td>
+                                <td class="address-td"><?php echo $address?></td>
                                 <td>
-                                    <a href="update-password.php?id=<?php echo$id;?>" class="secondary-btn">Change Password</a>
-                                    <a href="update-admin.php?id=<?php echo$id;?>" class="secondary-btn">Update Admin</a>
-                                    <a href="delete-admin.php?id=<?php echo$id;?>" class="secondary-btn">Delete Admin</a>
+                                    <a href="update-password.php?id=<?php echo$id;?>" class="secondary-btn-change">Change Password</a>
+                                    <a href="update-admin.php?id=<?php echo$id;?>" class="secondary-btn-update">Update Admin</a>
+                                    <a href="delete-admin.php?id=<?php echo$id;?>" class="secondary-btn-delete">Delete Admin</a>
                                 </td>
                             </tr>
                             <?php

@@ -44,7 +44,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add admin">
+                        <input type="submit" name="submit" class="secondary-btn-add" value="Add admin">
                     </td>
                 </tr>
             </table>
