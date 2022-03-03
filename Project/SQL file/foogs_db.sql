@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2022 at 12:20 PM
+-- Generation Time: Mar 03, 2022 at 05:11 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -41,12 +41,14 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `first_name`, `last_name`, `email`, `password`, `address`) VALUES
-(1, 'asd', 'dd', '11', '2467d3744600858cc9026d5ac6005305', '1'),
-(5, 'carl', 'carl', 'carl@carl.com', '4807fa3508b428b1c3ecb99658d85e67', 'carl house '),
-(15, 'dfdf', 'fdfd', 'asdasd', 'a8f5f167f44f4964e6c998dee827110c', '121233'),
-(16, 's', 'd', 'd', '03c7c0ace395d80182db07ae2c30f034', 'd'),
-(17, 'sadfasdf', 'asdfsadf', 'asdfasdf', '6a204bd89f3c8348afd5c77c717a097a', 'asdfasdfasdf'),
-(18, 'asdfsadf', 'sdfasdf', 'sdf@sdfsdf.cpom', 'd58e3582afa99040e27b92b13c8f2280', 'sdfsdf');
+(25, 'asdasd', 'asdasssssaasd', 'asdasd@adasd', '7815696ecbf1c96e6894b779456d330e', 'asd12121212sss'),
+(26, 'asd', 'asd', 'asd@asd.com', '7815696ecbf1c96e6894b779456d330e', 'asd'),
+(27, '1122', '1122', '1122@2211', '3b712de48137572f3849aabd5666a4e3', '2211'),
+(28, '32131', '3211', '12332@asdasd.123', 'caf1a3dfb505ffed0d024130f58c5cfa', '123'),
+(29, 'carl', 'carl', 'carl@carl.com', '4807fa3508b428b1c3ecb99658d85e67', 'carlcarl'),
+(30, 'ugat', 'root', 'root@root.com', 'c4ca4238a0b923820dcc509a6f75849b', 'root under the tree'),
+(31, 'admin', 'root', 'root@admin.com', '63a9f0ea7bb98050796b649e85481845', 'admin root'),
+(32, 'root', 'admin', '1@1.com', 'c4ca4238a0b923820dcc509a6f75849b', '1 and 2');
 
 -- --------------------------------------------------------
 
@@ -181,7 +183,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `cart`
