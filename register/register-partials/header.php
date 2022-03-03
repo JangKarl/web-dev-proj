@@ -17,16 +17,16 @@
     <!-- Navigation Bar -->
     <div class="nav-bar">
         <div class="logo">
-            <a href="index.html"><img src="../Project/images/icon.png" alt="icon.png" style="width: 100px;"></a>
+            <a href="../../../web-dev-proj/Project/index.html"><img src="../Project/images/icon.png" alt="icon.png" style="width: 100px;"></a>
         </div>
         <nav>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="products.html">Products</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="cart.html" class="fas fa-shopping-cart"></a></li>
-              <li><a href="account.html" class="fas fa-user-circle"></a></li>
+              <li><a href="../../../web-dev-proj/Project/index.html">Home</a></li>
+              <li><a href="../../../web-dev-proj/Project/products.html">Products</a></li>
+              <li><a href="../../../web-dev-proj/Project/about.html">About</a></li>
+              <li><a href="#">Login</a></li>
+              <li><a href="../../../web-dev-proj/Project/cart.html" class="fas fa-shopping-cart"></a></li>
+              <li><a href="../../../web-dev-proj/Project/cart.html" class="fas fa-user-circle"></a></li>
             </ul>
         </nav>
     </div>
