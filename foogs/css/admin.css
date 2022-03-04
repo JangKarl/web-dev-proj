@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
 /* navigation bar starts */
 *{
     margin: 0;
@@ -13,10 +15,10 @@
     display: flex;
 }
 nav{
-    position: relative;
+    position: sticky;
     top: 0;
     bottom: 0;
-    height: 97vh;
+    height: 100vh;
     left: 0;
     background: #fff;
     width: 280px;
@@ -119,6 +121,39 @@ a:hover{
 }
 /* footer bar ends */
 
+/* bryan's universal btn */
+.btn,
+.option-btn,
+.delete-btn{
+   display: block;
+   width: 100%;
+   text-align: center;
+   background-color: lightgreen;
+   color:var(--white);
+   font-size: 16px;
+   padding: 5px 5px;
+   border-radius: .5rem;
+   cursor: pointer;
+   margin-top: 1rem;
+}
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover{
+   background-color: rgb(54, 157, 54);
+}
+.option-btn i,
+.delete-btn i{
+   padding-right: .5rem;
+}
+.option-btn{
+   background-color: greenyellow;
+}
+.delete-btn{
+   margin-top: 0;
+   background-color: rgb(13, 67, 0);
+}
+
+
 /* mainsection */
 .main-content{
     position: relative;
@@ -179,7 +214,6 @@ a:hover{
 .success{
     color: green;
 }
-
 .failed{
     color: red;
 }
@@ -200,34 +234,32 @@ td input{
     text-align: center;
     box-shadow: 0px 5px 10px rgb(151, 151, 151);
 }
-    .login h1{
-        text-align: center;
-    }
+.login h1{
+    text-align: center;
+}
+.login p{
+    text-align: left;
+    margin: 1% 0;
+}
+.login input{
+    width: 100%;
+    border-bottom: solid black .10px;
+}
+.login .login-btn{
+    border: none;
+    background-color: #028a0082;
+    color: #fff;
+    padding: 1% 25%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.login .login-btn:hover{
+    background-color: #038a00;
+    color: #fff;
+    padding: 1% 25%;
+    border-radius: 15px;
+}
 
-    .login p{
-        text-align: left;
-        margin: 1% 0;
-    }
-    .login input{
-        width: 100%;
-        border-bottom: solid black .10px;
-    }
-
-    .login .login-btn{
-        border: none;
-        background-color: #028a0082;
-        color: #fff;
-        padding: 1% 25%;
-        border-radius: 15px;
-        cursor: pointer;
-    }
-
-    .login .login-btn:hover{
-        background-color: #038a00;
-        color: #fff;
-        padding: 1% 25%;
-        border-radius: 15px;
-    }
 
 /*Manage Admin*/
 .secondary-btn-change{
@@ -239,7 +271,6 @@ td input{
     padding: 1%;
     
 }
-
 .secondary-btn-change:hover{
     background-color: #038a00;
 }
@@ -251,11 +282,9 @@ td input{
     text-align: center;
     padding: 1%;
 }
-
 .secondary-btn-update:hover{
     background-color: #00278a;
 }
-
 .secondary-btn-delete{
     background-color: #8a0000b5;
     margin: 5px;
@@ -264,7 +293,6 @@ td input{
     text-align: center;
     padding: 1%;
 }
-
 .secondary-btn-delete:hover{
     background-color: #8a0000;
 }
@@ -279,6 +307,8 @@ td input{
 .secondary-btn-add:hover{
     background-color: #ce8d00e4;
 }
+
+
 
 /* Manage Inventory */
 .add-product-form{
@@ -372,4 +402,3 @@ td input{
     padding:1.2rem 1.4rem;
     text-transform: none;
  }
-
