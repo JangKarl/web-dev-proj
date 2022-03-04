@@ -7,32 +7,144 @@
             <h1>PORTAL | MANAGE CATEGORY </h1>
             <i class="fas fa-user-cog"></i>
         </div>
+        <br>
 
-        <a href="#">Add category</a>
-        <!-- Main body -->  
-        <div class="columns">
-            <h1>5</h1>
-            <br><br><br>
-            Vegetables
-        </div>
-        <div class="columns">
-            <h1>5</h1>
-            <br><br><br>
-            Fruits
-        </div>
-        <div class="columns">
-            <h1>5</h1>
-            <br><br><br>
-            Beverages
-        </div>
-        <div class="columns">
-            <h1>5</h1>
-            <br><br><br>
-            More
-        </div>
+        <?php
+
+            if (isset($_SESSION['add']))
+            {
+                echo $_SESSION['add'];
+                unset($_SESSION['add']);
+            }
+
+            if (isset($_SESSION['remove']))
+            {
+                echo $_SESSION['remove'];
+                unset($_SESSION['remove']);
+            }
+
+            if (isset($_SESSION['delete']))
+            {
+                echo $_SESSION['delete'];
+                unset($_SESSION['delete']);
+            }
+
+            if (isset($_SESSION['no-category-found']))
+            {
+                echo $_SESSION['no-category-found'];
+                unset($_SESSION['no-category-found']);
+            }
+
+            if (isset($_SESSION['update']))
+            {
+                echo $_SESSION['update'];
+                unset($_SESSION['update']);
+            }
+
+            if (isset($_SESSION['upload']))
+            {
+                echo $_SESSION['upload'];
+                unset($_SESSION['upload']);
+            }
+
+            if (isset($_SESSION['failed-remove']))
+            {
+                echo $_SESSION['failed-remove'];
+                unset($_SESSION['failed-remove']);
+            }
 
 
-    </div><!-- div main-content -->        
+        ?>
+        <br>
+
+        <a href="<?php echo SITEURL; ?>add-category.php">Add category</a>
+        <br>
+
+        <!-- Main body -->
+        <table class="tbl-full">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Featured</th>
+                <th>Active</th>
+                <th>Actions</th>
+            </tr>
+
+            <?php
+
+                //Query to get all category from database
+                $sql = "SELECT * FROM category";
+
+                //Execute query
+                $res = mysqli_query($conn, $sql);
+
+                //Count rows
+                $count = mysqli_num_rows($res);
+
+                //create serial number variable
+                $sn=1;
+
+                //Check whether we have data in database or not
+                if ($count>0) {
+                    // we have data in database
+                    // get data and display
+                    while ($row=mysqli_fetch_assoc($res)) {
+                        $category_id = $row['category_id'];
+                        $title = $row['title'];
+                        $image_name = $row['image_name'];
+                        $featured = $row['featured'];
+                        $active = $row['active'];
+
+                        ?>
+
+                        <tr>
+                            <td><?php echo $sn++; ?></td>
+                            <td><?php echo $title; ?></td>
+                            <td>
+                                <?php
+                                    //check whether the image is available or not
+                                    if($image_name!=""){
+                                      //display the image
+                                      ?>
+                                      <img src="<?php echo SITEURL;?>../images/<?php echo $image_name;?>" width="80rem">
+                                      <?php
+                                    }
+                                    else{
+                                        //display message
+                                        echo "<div class='error'>Image not added.</div>";
+                                    }
+                                ?>
+                            </td>
+                            <td><?php echo $featured; ?></td>
+                            <td><?php echo $active; ?></td>
+                            <td>
+                              <a href="<?php echo SITEURL; ?>update-category.php?category_id=<?php echo $category_id;?>" class="btn-secondary">Update Category.</a>
+                              <a href="<?php echo SITEURL; ?>delete-category.php?category_id=<?php echo $category_id;?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
+                            </td>
+                        </tr>
+
+                        <?php
+                    }
+                }
+                else {
+                    // we do not have data
+                    //we will display message inside table
+                    ?>
+
+                    <tr>
+                        <td colspan="6"><div class="error">No Category Added.</div></td>
+                    </tr>
+
+                    <?php
+                }
+            ?>
+
+
+        </table>
+
+
+    </div><!-- div main-content -->
 
     <!-- Main Content Section Ends -->
 
