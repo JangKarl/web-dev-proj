@@ -1,28 +1,56 @@
+<?php
+
+@include 'config.php'; 
+//inserting to cart process
+if(isset($_POST['add_to_cart'])){
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $product_quantity = 1;
+
+    $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name'");
+
+    if(mysqli_num_rows($select_cart) > 0){
+    $message[] = 'product already added to cart';
+    }else{
+    $insert_product = mysqli_query($conn, "INSERT INTO `cart`(name, price, image, quantity) VALUES('$product_name', '$product_price', '$product_image', '$product_quantity')");
+    $message[] = 'product added to cart succesfully';
+    }
+}
+
+?>
+
+
 <?php include("partials/html-head.php") ?>
 
-<?php include("partials/navigation.php") ?>
 
-    <?php
+    <!--Start of Navigation Bar-->
+    <div class="nav-bar">
+        <div class="logo">
+            <a href="index.php"><img src="images/icon.png" alt="icon.png" style="width: 100px;"></a>
+        </div>
 
-    @include 'config.php'; 
-    //inserting to cart process
-    if(isset($_POST['add_to_cart'])){
-        $product_name = $_POST['product_name'];
-        $product_price = $_POST['product_price'];
-        $product_image = $_POST['product_image'];
-        $product_quantity = 1;
+        <?php
+            @include 'config.php'; 
+            $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
+            $row_count = mysqli_num_rows($select_rows);
+        ?>
+
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="products.php">Products</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="login.php">Login</a></li>
+
+                <li><a href="cart.php" class="fas fa-shopping-cart"> <span><?php echo $row_count; ?></span></a></li>
+                <li><a href="account.php" class="fas fa-user-circle"></a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--End of Navigation Bar-->
+
     
-        $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name'");
-    
-        if(mysqli_num_rows($select_cart) > 0){
-        $message[] = 'product already added to cart';
-        }else{
-        $insert_product = mysqli_query($conn, "INSERT INTO `cart`(name, price, image, quantity) VALUES('$product_name', '$product_price', '$product_image', '$product_quantity')");
-        $message[] = 'product added to cart succesfully';
-        }
-    }
-
-    ?>
 
     <?php
     //displayin messages
