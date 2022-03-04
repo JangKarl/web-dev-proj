@@ -129,7 +129,7 @@ a:hover{
    width: 100%;
    text-align: center;
    background-color: lightgreen;
-   color:var(--white);
+   color: white;
    font-size: 16px;
    padding: 5px 5px;
    border-radius: .5rem;
