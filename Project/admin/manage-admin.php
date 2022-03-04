@@ -8,11 +8,11 @@
             <i class="fas fa-user-cog"></i>
         </div>
         <!-- Main body -->
-        <br><br>
-            <div class="main-btitle">
-                <h1>Registered Admins</h1>
-            </div>
-        <br>
+    
+        <div class="main-btitle">
+            <h1>Registered Admins</h1>
+        </div>
+
         
         <?php
             if(isset($_SESSION['add'])){
@@ -42,9 +42,11 @@
 
 
         ?>
-        <br>
-        <br>
+        
+        
         <a href="add-admin.php" class="secondary-btn-add">Add admin</a>
+        <br>
+
         <table class="tbl-full">
             <tr>
                 <th>No.</th>

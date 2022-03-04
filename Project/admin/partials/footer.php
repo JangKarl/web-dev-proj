@@ -7,5 +7,8 @@
             </div>
         </div>
         <!-- Footer Section Ends -->
+
+        <script src="js/script.js"></script>
+        
     </body>
 </html>
