@@ -1,6 +1,6 @@
 <?php
 
-//session_start();
+session_start();
 
 $con = new mysqli('localhost', 'root', '', 'foogs_db');
 
@@ -17,7 +17,11 @@ $num = mysqli_num_rows($result);
 
 if($num == 1){
     // $_SESSION['email'] = $email;
-    header('location:../index.php'); 
+    header('location:../index.php');
+    $_SESSION['success'] = "<a href='logout.php'>Log out</a>";
+    $_SESSION['change-login'] = '<a href="products.php" class="button">Shop Now</a>';
+    $_SESSION['account-manipulate'] = '<li><a href="account.php" class="fas fa-user-circle"></a></li';
+    $_SESSION['email'] = $email;
 }
 else{
     header('location:../loginError.php'); 
