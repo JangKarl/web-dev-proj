@@ -101,7 +101,7 @@ if(isset($_POST['order_btn'])){
             </div> -->
             <div class="inputBox">
                 <span>Contact number</span>
-                <input type="number" placeholder="Enter your number" name="number" required>
+                <input type="text" placeholder="Enter your number" name="number" maxlength="11" required>
             </div>
             <div class="inputBox">
                 <span>Payment method</span>
