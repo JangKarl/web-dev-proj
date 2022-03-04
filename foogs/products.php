@@ -1,199 +1,87 @@
-<?php include("partials/html-head.php") ?>
+<?php
 
-    <title>Fresh & Organic Online Grocery Store | Products</title>
-</head>
-<body>
+@include 'config.php'; 
+//inserting to cart process
+if(isset($_POST['add_to_cart'])){
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $product_quantity = 1;
+
+    $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name'");
+
+    if(mysqli_num_rows($select_cart) > 0){
+    $message[] = 'product already added to cart';
+    }else{
+    $insert_product = mysqli_query($conn, "INSERT INTO `cart`(name, price, image, quantity) VALUES('$product_name', '$product_price', '$product_image', '$product_quantity')");
+    $message[] = 'product added to cart succesfully';
+    }
+}
+
+?>
+
+
+<?php include("partials/html-head.php") ?>
 
 <?php include("partials/navigation.php") ?>
 
-    <div class="products">
-        <section id="more">
-            <div class="box-container">
+    
 
-                <div class="box">
-                    <h3>asparagus</h3>
-                    <img src="images/asparagus.png" alt="asparagus">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
+    <?php
+    //displayin messages
+    if(isset($message)){
+    foreach($message as $message){
+        echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+    };
+    };
 
-                <div class="box">
-                    <h3>banana</h3>
-                    <img src="images/banana.png" alt="banana">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
+    ?>
 
-                <div class="box">
-                    <h3>coffee</h3>
-                    <img src="images/coffee.png" alt="coffee">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
+    <!-- container -->
+    <div class="container">
 
-                <div class="box">
-                    <h3>broccoli</h3>
-                    <img src="images/broccoli.png" alt="broccoli">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
+    <section class="products">
+        <h1 class="heading">Latest Products</h1>
 
-                <div class="box">
-                    <h3>cherry</h3>
-                    <img src="images/cherry.png" alt="cherry">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
+        <div class="box-container">
 
-                <div class="box">
-                    <h3>lemonade</h3>
-                    <img src="images/lemonade.png" alt="lemonade">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
+            <?php
+            //fetching the products
+            $select_products = mysqli_query($conn, "SELECT * FROM `products`");
+            if(mysqli_num_rows($select_products) > 0){
+                while($fetch_product = mysqli_fetch_assoc($select_products)){
+            ?>
 
-                <div class="box">
-                    <h3>cucumber</h3>
-                    <img src="images/cucumber.png" alt="cucumber">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="box">
-                    <h3>apricot</h3>
-                    <img src="images/apricot.png" alt="apricot">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="box">
-                    <h3>milk</h3>
-                    <img src="images/milk.png" alt="milk">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="box">
-                    <h3>eggpalnt</h3>
-                    <img src="images/eggplant.png" alt="eggplant">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="box">
-                    <h3>lemon</h3>
-                    <img src="images/lemon.png" alt="lemon">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="box">
-                    <h3>orange juice</h3>
-                    <img src="images/orange-juice.png" alt="orange juice">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="box">
-                    <h3>cabbage</h3>
-                    <img src="images/cabbage.png" alt="cabbage">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="box">
-                    <h3>strawberry</h3>
-                    <img src="images/strawberry.png" alt="strawberry">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-
-                <div class="box">
-                    <h3>tea</h3>
-                    <img src="images/tea.png" alt="tea">
-                    <div class="price"> ₱0.00 </div>
-                    <div class="quantity">
-                        <span>quantity : </span>
-                        <input type="number" min="1" max="1000" value="1">
-                        <span> /kg </span>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
+            <!-- displaying on input tags -->
+            <form action="" method="post">
+            <div class="box">
+                
+                <img src="admin/uploaded_img/<?php echo $fetch_product['image']; ?>" alt=""><!-- upper image -->
+                <h3><?php echo $fetch_product['name']; ?></h3><!-- middle displayed name  -->
+                <div class="price"> $ <?php echo $fetch_product['price']; ?>/-</div> <!-- PRICE display -->
+                <!-- fetching the select item and inserting onto the cart_tbl -->
+                <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
+                <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
+                <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
+                <input type="submit" class="btn" value="add to cart" name="add_to_cart"><!-- button -->
             </div>
-        </section>
+        </form>
+
+        <?php
+            };
+        };
+        ?>    
+
+        </div>
+
+        
+    </section> 
+    
     </div>
+    
 
     <?php include("partials/footer.php")?>
+    <script src="js/script.js"></script>
 
 </body>
 </html>

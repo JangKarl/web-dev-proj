@@ -13,14 +13,7 @@
             <div class="col-2">
                 <h1>Fresh & Organic <br>Online Grocery <br>Store</h1>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, nam velit, esse molestias quasi recusandae, aperiam explicabo ipsa eos totam consequuntur dicta tempora? Excepturi, quasi!</p>
-                <?php
-                    if(isset($_SESSION['change-login'])) {
-                        echo $_SESSION['change-login'];
-                    }else{
-                        echo '<a href="login.php" class="button">Log In</a>';
-                    }
-            
-                ?>
+                <a href="login.php" class="button">LOG IN</a>
             </div>
             <div class="col-2">
                 <img src="images/content-1.png" alt="vegetables">

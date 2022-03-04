@@ -14,7 +14,6 @@ p {
     font-size: 20px;
     color: #6d6d6d;
 }
-
 h1 {
     font-family: 'Rowdies', cursive;
     color: #038a00;
@@ -288,6 +287,171 @@ div.products {
         text-transform: none;
         text-align: center;
     }
-.acc-title{
-    margin: 2%;
+
+/* buttons */
+.btn,
+.option-btn,
+.delete-btn{
+   display: block;
+   width: 100%;
+   text-align: center;
+   background-color: green;
+   color:white;
+   font-size: 22px;
+   padding: 5px 5px;
+   border-radius: .5rem;
+   cursor: pointer;
+   margin-top: 1rem;
 }
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover{
+   background-color: rgb(54, 157, 54);
+}
+.option-btn i,
+.delete-btn i{
+   padding-right: .5rem;
+}
+.option-btn{
+   background-color: greenyellow;
+}
+.delete-btn{
+   margin-top: 0;
+   background-color: rgb(13, 67, 0);
+}
+
+
+/* products section */
+.heading{
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color:var(--black);
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+ }
+.products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 20rem);
+    gap:1.5rem;
+    justify-content: center;
+ }
+ 
+ .products .box-container .box{
+    text-align: center;
+    padding:1rem;
+    box-shadow: var(--box-shadow);
+    border: 1px solid black;
+    border-radius: .5rem;
+ }
+ 
+ .products .box-container .box img{
+    height: 20rem;
+    width: 14rem;
+ }
+ 
+ .products .box-container .box h3{
+    margin:1rem 0;
+    font-size: 2rem;
+    color: black;
+ }
+ 
+ .products .box-container .box .price{
+    font-size: 2rem;
+    color: black;
+ }
+ /* message */
+ .message{
+    /* background-color: blu; */
+    position: sticky;
+    top:0; left:0;
+    z-index: 10000;
+    border-radius: .5rem;
+    /* background-color: var(--; */
+    padding:1.5rem 2rem;
+    margin:0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:1.5rem;
+ }
+ 
+ .message span{
+    font-size: 20px;
+    color: black;
+ }
+ 
+ .message i{
+    font-size: 2.5rem;
+    color: black;
+    cursor: pointer;
+ }
+ 
+ .message i:hover{
+    color:var(--red);
+ }
+
+ 
+ /*Shopping Cart */
+.shopping-cart table{
+    text-align: center;
+    width: 100%;
+ }
+ 
+ .shopping-cart table thead th{
+    padding:1rem;
+    font-size: 18px;
+    color:white;
+    background-color: green;
+ }
+ 
+ .shopping-cart table tr td{
+    border-bottom: 1px solid gray;
+    padding: 1rem;
+    font-size: 20px;
+    color: black;
+ }
+ 
+ .shopping-cart table input[type="number"]{
+    border: 1px solid gray;
+    padding:1rem 2rem;
+    font-size: 20px;
+    color:black;
+    width: 10rem;
+ }
+ 
+ .shopping-cart table input[type="submit"]{
+    padding: .5rem 1.5rem;
+    margin-left: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: lightgreen;
+    color: white;
+ }
+ 
+ .shopping-cart table input[type="submit"]:hover{
+    background-color: rgb(96, 160, 96);
+ }
+ 
+ .shopping-cart table .table-bottom{
+    background-color: rgb(211, 211, 211);
+ }
+ 
+ .shopping-cart .checkout-btn{
+    text-align: center;
+    margin-top: 1rem;
+ }
+ 
+ .shopping-cart .checkout-btn a{
+    display: inline-block;
+    width: auto;
+ }
+ 
+ .shopping-cart .checkout-btn a.disabled{
+    pointer-events: none;
+    opacity: .5;
+    user-select: none;
+    background-color: gray;
+ }
