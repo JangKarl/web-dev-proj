@@ -15,10 +15,22 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="products.php">Products</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="login.php">Login</a></li>
+                <li><?php 
+                if(isset($_SESSION['success'])){
+                    echo $_SESSION['success'];
+                }else{
+                    echo "<a href='login.php'>Login</a>";
+                }
+                ?></li>
 
                 <li><a href="cart.php" class="fas fa-shopping-cart"> <span><?php echo $row_count; ?></span></a></li>
-                <li><a href="account.php" class="fas fa-user-circle"></a></li>
+                <?php 
+                if(isset($_SESSION['account-manipulate']))
+                {
+                    echo $_SESSION['account-manipulate'];
+                }else{
+                }
+                ?>
             </ul>
         </nav>
     </div>
