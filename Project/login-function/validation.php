@@ -17,9 +17,9 @@ $num = mysqli_num_rows($result);
 
 if($num == 1){
     // $_SESSION['email'] = $email;
-    header('location:../Project/index.html'); 
+    header('location:../index.php'); 
 }
 else{
-    header('location:loginError.php'); 
+    header('location:../loginError.php'); 
 }
 ?>

@@ -21,12 +21,12 @@ else{
         $stmt -> bind_param("ssssss", $first, $last, $email, $address, $password, $gender);
         $stmt -> execute();
         $_SESSION['firstname'] = $first;
-        header('location:registerComp.php');
+        header('location:../registerComp.php');
         $stmt -> close();
         $conn -> close();
     }
     else{
-        header('location:login.php');
+        header('location:../login.php');
     }
 }
 ?>

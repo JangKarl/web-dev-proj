@@ -1,13 +1,14 @@
-<?php
-  session_start();
-  include './register-partials/header.php'
+<?php include("partials/html-head(logincss).php") ?>
 
-?>
-  
+    <title>Fresh & Organic Online Grocery Store | Login</title>
+</head>
+<body>
+<?php include("partials/navigation.php") ?>
+
     <!-- Login Container-->
     <div class="lg_container">
         <h1>Login</h1>
-        <form action="validation.php" method="post">
+        <form action="login-function/validation.php" method="post">
             <div class="txtfield">
                 <input type="text" name="email" required>
                 <span></span>
@@ -18,6 +19,7 @@
                 <span></span>
                 <label>Password</label>
             </div>
+            <div class="incorrect">Wrong Credentials!</div>
             <div class="fpass">Forgot Password?</div>
             <input type="submit" value="Login">
             <div class="signup_link">
@@ -35,7 +37,7 @@
                     <p>Please fill in the form</p>
                 </div>
                 <div class="reg_content">
-                    <form action="register.php" method="post">
+                    <form action="login-function/register.php" method="post">
                         <div class="userinfo">
                             <div class="inputbox">
                               <span class="info">First Name</span>
@@ -55,7 +57,7 @@
                             </div>
                             <div class="inputbox">
                               <span class="info">Password</span>
-                              <input type="password" name="password"  placeholder="Enter your password" required>
+                              <input type="password" name="password" placeholder="Enter your password" required>
                             </div>
                             <div class="inputbox">
                               <span class="info">Confirm Password</span>
@@ -98,6 +100,5 @@
         function regopenmodal(){mainpopup.style.display = 'block';}
         function regclosemodal(){mainpopup.style.display = 'none';}
     </script>
-
 </body>
 </html>
