@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2022 at 05:11 PM
+-- Generation Time: Mar 04, 2022 at 09:07 AM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -63,6 +63,20 @@ CREATE TABLE `cart` (
   `cart_quantity` int(11) NOT NULL,
   `total` float NOT NULL,
   `order_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `category_id` int(10) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `image_name` varchar(100) NOT NULL,
+  `featured` varchar(10) NOT NULL,
+  `active` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -148,6 +162,12 @@ ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`);
 
 --
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`category_id`);
+
+--
 -- Indexes for table `order`
 --
 ALTER TABLE `order`
@@ -190,6 +210,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `cart`
   MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `category_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `order`
