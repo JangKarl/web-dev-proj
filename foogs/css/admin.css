@@ -276,115 +276,100 @@ td input{
     text-align: center;
     padding: 1%;
 }
-
 .secondary-btn-add:hover{
     background-color: #ce8d00e4;
 }
 
-/* .main-skills{
-    display: flex;
-    margin-top: 20px;
-
+/* Manage Inventory */
+.add-product-form{
+    max-width: 50%;
+    background-color: rgb(218, 218, 218);
+    border-radius: .5rem;
+    padding: 1rem;
+    margin:0 auto;
+    margin-top: 1rem;
 }
-.main-skills .card{
-    width: 25%;
-    margin: 10px;
-    background-color: #fff;
+.add-product-form h3{
+    font-size: 20px;
+    /* margin-bottom: 1rem; */
+    color: green;
+    text-transform: uppercase;
     text-align: center;
-    border-radius: 20px;
-    padding: 10px;
-    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
-}
-.main-skills .card h3{
-    margin: 10px;
-    text-transform: capitalize;   
-}
-.main-skills .card p{
+ }
+.add-product-form .box{
+    text-transform: none;
+    padding:1.2rem;
     font-size: 12px;
-
-}
-.main-skills .card button{
-    background: orangered;
-    color: #fff;
-    padding: 7px 15px;
-    border-radius: 10px;
-    margin-top: 15px;
-    cursor: pointer;
-}
-.main-skills .card button:hover{
-    background: rgba(223, 70, 15, 0.856)
-}
-.main-skills .card i{
-    font-size: 22px;
-    padding: 10px;
-
-} */
-/* Course */
-/* .main-course{
-    margin-top: 20px;
-    text-transform: capitalize;
-
-}
-.course-box{
+    color:var(--black);
+    border-radius: 1rem;
+    background-color: white;
+    margin: 5px 0;
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
-
 }
-.course-box ul{
-    list-style: none;
-    display: flex;
-}
-.course-box ul li{
-    margin: 10px;
-    color: gray;
-    cursor: pointer;
-}
-.course-box ul .active{
-    color: #000;
-    border-bottom: 1px solid #000;
-}
-.course-box .course{
-    display: flex;
-}
-.box{
-    width: 33%;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    background: rgb (235, 233, 233);
-    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
-}
-.box p{
+/* display */
+.display-product-table table{
+    width: 100%;
+    text-align: center;
+ }
+ 
+ .display-product-table table thead th{
+    padding: 5px;
     font-size: 12px;
-    margin-top: 5px;
-}
-.box button{
-    background: #000;
-    color: #fff;
-    padding: 7px 10px;
-    border-radius: 10px;
-    margin-top: 3rem;
-    cursor: pointer;
-}
-.box button:hover{
-    background: rgba(0,0,0,0.842);
-}
-.box i{
-    font-size: 7rem;
-    float: right;
-    margin: -20px 20px 20px 0;
+    background-color: green;
+    color: white;
+ }
+ .display-product-table table td{
+    padding: 5px;
+    font-size: 12px;
+    color:black;
+ }
+ 
+ .display-product-table table td:first-child{
+    padding:0;
+ }
+ 
+ .display-product-table table tr:nth-child(even){
+    background-color: rgb(175, 175, 175);
+ }
+ 
+ .display-product-table .empty{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    background-color: rgb(175, 175, 175);
+    color: black;
+    padding: 5px;
+    font-size: 18px;
+ }
 
-}
-.html{
-    color: rgb(25,94,54);
-}
-.css{
-    color: rgb(104, 179, 35);
-}
-.js{
-    color: rgb(28, 98, 179);
-} */
+ .edit-form-container{
+    position: fixed;
+    top:0; left:0;
+    z-index: 1100;
+    background-color: rgba(0,0,0,0.5);
+    padding:2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+ }
+ 
+ .edit-form-container form{
+    width: 30rem;
+    border-radius: .5rem;
+    background-color: white;
+    text-align: center;
+    padding:2rem;
+ }
+ .edit-form-container form .box{
+    width: 100%;
+    background-color: rgb(230, 229, 229);
+    border-radius: .5rem;
+    margin:1rem 0;
+    font-size: 18px;
+    color: black;
+    padding:1.2rem 1.4rem;
+    text-transform: none;
+ }
+
