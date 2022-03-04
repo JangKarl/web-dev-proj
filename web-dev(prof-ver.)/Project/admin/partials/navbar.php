@@ -22,7 +22,7 @@
     <div class="container">
         <nav>
             <ul>                
-                <li><a href="../index.html" class="logo">
+                <li><a href="../index.php" class="logo">
                     <img src="../images/favicon.ico" alt="">
                 </a></li>
                 </a></li>
