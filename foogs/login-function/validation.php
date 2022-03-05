@@ -22,6 +22,7 @@ if($num == 1){
     $_SESSION['change-login'] = '<a href="products.php" class="button">Shop Now</a>';
     $_SESSION['account-manipulate'] = '<li><a href="account.php" class="fas fa-user-circle"></a></li';
     $_SESSION['email'] = $email;
+    $_SESSION['add-cart'] = '<input type="submit" class="btn" value="add to cart" name="add_to_cart">';
 }
 else{
     header('location:../loginError.php'); 

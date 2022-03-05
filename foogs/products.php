@@ -65,7 +65,11 @@ if(isset($_POST['add_to_cart'])){
                 <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
 
                 <!-- ADD TO CART BUTTON -->
-                <input type="submit" class="btn" value="add to cart" name="add_to_cart">
+                <?php if(isset($_SESSION['add-cart'])){
+                    echo $_SESSION['add-cart'];
+                }else{
+                    echo '<a href="login.php" class="btn">Log In First</a>';
+                }?>
                 <!-- ADD TO CART BUTTON -->
 
                 
