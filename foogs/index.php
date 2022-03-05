@@ -1,5 +1,4 @@
 <?php include("partials/html-head.php") ?>
-<?php include("config/constant.php") ?>
 
 
     <title>Fresh & Organic Online Grocery Store | Home</title>
@@ -30,61 +29,41 @@
     </div>
     <!--End of Content-->
 
-    <!-- Category Section Starts here -->
-    <section class="container-2">
-        <div style="text-align: center;">
-            <h1 class="c2-title">Featured Product Category</h1>
+    <!--Start of Featured Products-->
+    <div class="container-2">
+        <h1 class="c2-title">Fresh Products</h1>
+        <div class="row">
+            <div class="col-4">
+                <div class="mini-container">
+                    <h2>Vegetables</h2>
+                    <img src="images/vegetables.png" alt="eggplant">
+                    <a href="vegetables.php" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mini-container">
+                    <h2>Fruits</h2>
+                    <img src="images/fruits.png" alt="lemon">
+                    <a href="fruits.php" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mini-container">
+                    <h2>Beverages</h2>
+                    <img src="images/beverages.png" alt="milk">
+                    <a href="beverages.php" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mini-container">
+                    <h2>More</h2>
+                    <img src="images/more.png" alt="papaya">
+                    <a href="products.php" class="btn">see more</a>
+                </div>
+            </div>
         </div>
-        <br>
-        <div style="text-align: center;">
-
-            <?php
-                //create sql query to display categpries from database
-                $sql = "SELECT * FROM category WHERE active = 'Yes' AND featured ='Yes' LIMIT 3";
-                //execute the query
-                $res = mysqli_query($conn, $sql);
-                //count rows to check whether the category is available or not
-                $count = mysqli_num_rows($res);
-
-                if ($count>0)
-                {
-                    // categories available
-                    while ($row = mysqli_fetch_assoc($res))
-                    {
-                      // get the values like id, title, image
-                      $category_id = $row['category_id'];
-                      $title = $row['title'];
-                      $image_name = $row['image_name'];
-                      ?>
-
-                      <div style="
-                      display: inline-block;
-                      margin-top: 1rem;
-                      background: rgb(3, 138, 0);
-                      color: #fff;
-                      padding: .8rem 3rem;
-                      font-size: 1.7rem;
-                      text-align: center;
-                      cursor: pointer;
-                      border-radius: 50px;
-                      ">
-                          <?php echo $title; ?>
-                          <br>
-                          <img src="images/<?php echo $image_name; ?>" class="img-responsive" width="250px">
-                      </div>
-
-                      <?php
-                    }
-                }
-                else
-                {
-                    //categories not available
-                    echo "<div class='error'>Don't have any category yet.. </div>";
-                }
-            ?>
-        </div>
-    </section>
-    <!-- Category Section Ends here -->
+    </div>
+    <!--End of Featured Products-->
 
     <?php  include("partials/footer.php") ?>
 
