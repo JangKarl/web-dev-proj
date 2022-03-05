@@ -1,6 +1,6 @@
 <?php
     //Starting session
-    session_start();
+    //session_start();
 
     //Create Constant to store values
     define('SITEURL', ''); //better if already hosted
