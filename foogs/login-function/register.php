@@ -8,8 +8,8 @@ $first = $_POST['firstname'];
 $last = $_POST['lastname'];
 $email = $_POST['email'];
 $address = $_POST['address'];
-$password = $_POST['password'];
-$confirm = $_POST['confirm'];
+$password = md5($_POST['password']);
+$confirm = md5($_POST['confirm']);
 $gender = $_POST['gender'];
 
 if($conn -> connect_error){
