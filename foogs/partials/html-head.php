@@ -1,5 +1,10 @@
-<?php 
-    include("config/constant.php");
+<?php
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    else {
+        return null;
+    }
 ?>
 
 
