@@ -15,7 +15,7 @@
             <div class="col-2">
                 <div class="icon">
                     <p><strong>About Us</strong><br>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fparse.com" target="_blank" rel="noopener" class="fa-brands fa-facebook"></a><p>Share Us!</p>
+                    <a href="https://www.facebook.com/sharer.php?u=https://foogs.000webhostapp.com/" target="_blank" rel="noopener" class="fa-brands fa-facebook"></a><p>Share Us!</p>
                     <p>&#169Copyright 2022</p> 
                 </div>       
             </div>
