@@ -86,8 +86,13 @@ if(isset($_GET['delete_all'])){
 
         </table>
 
+        
+                <!-- ADD TO CART BUTTON -->
         <div class="checkout-btn">
         <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">proceed to checkout</a>
+                <!-- ADD TO CART BUTTON -->
+
+
         </div>
 
     </section>
