@@ -4,16 +4,11 @@
 
 if(isset($_POST['order_btn'])){
 
-//    $name = $_POST['name'];
+
    $number = $_POST['number'];
-//    $email = $_POST['email'];
+
    $method = $_POST['method'];
-//    $flat = $_POST['flat'];
-//    $street = $_POST['street'];
-//    $city = $_POST['city'];
-//    $state = $_POST['state'];
-//    $country = $_POST['country'];
-//    $pin_code = $_POST['pin_code'];
+
 
    $cart_query = mysqli_query($conn, "SELECT * FROM `cart`");
    $price_total = 0;
@@ -91,14 +86,7 @@ if(isset($_POST['order_btn'])){
         </div>
 
         <div class="flex">
-            <!-- <div class="inputBox">
-                <span>your name</span>
-                <input type="text" placeholder="enter your name" name="name" required>
-            </div>
-            <div class="inputBox">
-                <span>your email</span>
-                <input type="email" placeholder="enter your email" name="email" required>
-            </div> -->
+
             <div class="inputBox">
                 <span>Contact number</span>
                 <input type="text" placeholder="Enter your number" name="number" maxlength="11" required>
@@ -110,31 +98,7 @@ if(isset($_POST['order_btn'])){
                 <option value="credit card">Credit card</option>
                 <option value="g-cash">G-Cash</option>
                 </select>
-            <!-- </div>
-            <div class="inputBox">
-                <span>address line 1</span>
-                <input type="text" placeholder="e.g. flat no." name="flat" required>
-            </div>
-            <div class="inputBox">
-                <span>address line 2</span>
-                <input type="text" placeholder="e.g. street name" name="street" required>
-            </div>
-            <div class="inputBox">
-                <span>city</span>
-                <input type="text" placeholder="e.g. mumbai" name="city" required>
-            </div>
-            <div class="inputBox">
-                <span>state</span>
-                <input type="text" placeholder="e.g. maharashtra" name="state" required>
-            </div>
-            <div class="inputBox">
-                <span>country</span>
-                <input type="text" placeholder="e.g. india" name="country" required>
-            </div>
-            <div class="inputBox">
-                <span>pin code</span>
-                <input type="text" placeholder="e.g. 123456" name="pin_code" required>
-            </div> -->
+           
         </div>
             <input type="submit" value="order now" name="order_btn" class="btn">
         </form>

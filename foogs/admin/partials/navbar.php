@@ -42,14 +42,17 @@
                     <i class="fa-solid fa-warehouse"></i>
                     <span class="nav-item">Inventory</span>
                 </a></li>
+
                 <li><a href="manage-order.php">
                     <i class="fa-solid fa-boxes-stacked"></i>
-                    <span class="nav-item">Orders</span>
+                    <span class="nav-itemDisable">Orders</span>
                 </a></li>
+
                 <li><a href="#">
                     <i class="fas fa-question-circle"></i>
-                    <span class="nav-item">Help</span>
+                    <span class="nav-itemDisable">Help</span>
                 </a></li>
+
                 <li><a href="../admin/logout.php" class="logout">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="nav-item">Logout</span>

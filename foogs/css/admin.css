@@ -66,6 +66,7 @@ nav .fas{
     color: green;
 
 }
+
 nav .fa-solid{
     position: relative;
     width: 76px;
@@ -77,6 +78,7 @@ nav .fa-solid{
     color: green;
 
 }
+
 nav .fa{
     position: relative;
     width: 76px;
@@ -101,6 +103,15 @@ nav .fa{
     color: green;
     
 }
+.nav-itemDisable{
+    position: relative;
+    top: 12px;
+    margin-left: 5px;
+    pointer-events:none;
+    opacity:0.6;   
+    
+}
+
 a:hover{
     background: #eee;
 }
