@@ -40,7 +40,7 @@
 
             <?php
                 //create sql query to display categpries from database
-                $sql = "SELECT * FROM category WHERE active = 'Yes' AND featured ='Yes' LIMIT 3";
+                $sql = "SELECT * FROM category WHERE active = 'Yes' AND featured ='Yes'";
                 //execute the query
                 $res = mysqli_query($conn, $sql);
                 //count rows to check whether the category is available or not
@@ -59,10 +59,11 @@
 
                       <div style="
                       display: inline-block;
-                      margin-top: 1rem;
+                      margin: 1rem 2%;
                       background: rgb(3, 138, 0);
+                      font-family: 'Rowdies', cursive;;
                       color: #fff;
-                      padding: .8rem 3rem;
+                      padding: .8rem .8rem;
                       font-size: 1.7rem;
                       text-align: center;
                       cursor: pointer;
