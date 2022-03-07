@@ -47,7 +47,7 @@ if(isset($_POST['add_to_cart'])){
 
             <?php
             //fetching the products
-            $select_products = mysqli_query($conn, "SELECT * FROM `products`");
+            $select_products = mysqli_query($conn, "SELECT * FROM `product`");
             if(mysqli_num_rows($select_products) > 0){
                 while($fetch_product = mysqli_fetch_assoc($select_products)){
             ?>
