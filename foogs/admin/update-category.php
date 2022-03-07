@@ -17,7 +17,7 @@
                       $category_id = $_GET['category_id'];
 
                       //create sql query to get all details
-                      $sql = "SELECT category_id, title, image_name, featured, active FROM category WHERE category_id = $category_id";
+                      $sql = "SELECT category_id, name, image, featured, active FROM category WHERE category_id = $category_id";
 
                       //execute the query
                       $res = mysqli_query($conn, $sql);
@@ -28,8 +28,8 @@
                       if ($count==1) {
                           // get all the data
                           $row = mysqli_fetch_assoc($res);
-                          $title = $row['title'];
-                          $current_image = $row['image_name'];
+                          $name = $row['name'];
+                          $current_image = $row['image'];
                           $featured = $row['featured'];
                           $active = $row['active'];
 
@@ -48,9 +48,9 @@
 
               <table class="tbl-full">
                   <tr>
-                      <td>Title</td>
+                      <td>name</td>
                       <td>
-                          <input type="text" name="title" value="<?php echo $title; ?>">
+                          <input type="text" name="name" value="<?php echo $name; ?>">
                       </td>
                   </tr>
 

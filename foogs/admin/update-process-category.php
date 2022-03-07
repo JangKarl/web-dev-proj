@@ -4,7 +4,7 @@
     if (isset($_POST['submit'])) {
         //1. get all the values on forms
         $category_id =$_POST['category_id'];
-        $title =$_POST['title'];
+        $name =$_POST['name'];
         $current_image =$_POST['current_image'];
         $featured =$_POST['featured'];
         $active =$_POST['active'];
@@ -14,22 +14,22 @@
         if (isset($_FILES['image']['name']))
         {
             // get image details
-            $image_name = $_FILES['image']['name'];
+            $image = $_FILES['image']['name'];
 
             //check whether the image is available
-            if ($image_name != "")
+            if ($image != "")
             {
                 // image available
                 // A. upload the nre image
                 //Auto rename uploaded images//
                 //Get the extension of image//
-                $fileExtension = pathinfo($image_name, PATHINFO_EXTENSION);
+                $fileExtension = pathinfo($image, PATHINFO_EXTENSION);
                 //Rename image
-                $image_name = "Food_Category_".rand(000, 999).'.'.$fileExtension;
+                $image = "Food_Category_".rand(000, 999).'.'.$fileExtension;
 
                 $source_path = $_FILES['image']['tmp_name'];
 
-                $destination_path = "../images/".$image_name;
+                $destination_path = "../images/".$image;
 
                 //finally upload image//
                 $upload = move_uploaded_file($source_path, $destination_path);
@@ -66,17 +66,17 @@
             }
             else
             {
-                $image_name = $current_image;
+                $image = $current_image;
             }
         }
         else
         {
-            $image_name = $current_image;
+            $image = $current_image;
         }
         //3. Update the database
         $sql2 = "UPDATE category SET
-            title = '$title',
-            image_name = '$image_name',
+            name = '$name',
+            image = '$image',
             featured = '$featured',
             active = '$active'
             WHERE category_id= $category_id

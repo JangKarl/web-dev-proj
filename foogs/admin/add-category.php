@@ -27,9 +27,9 @@
                 <table class="tbl-full">
 
                     <tr>
-                        <td>Category Title</td>
+                        <td>Category Name</td>
                         <td>
-                            <input type="text" name="title">
+                            <input type="text" name="name">
                         </td>
                     </tr>
 
@@ -73,7 +73,7 @@
                     //echo "Clicked";
 
                     //1. Get the category form//
-                    $title = $_POST['title'];
+                    $name = $_POST['name'];
                     //for radio input type, we need to check whether the button is selected or not
                     if (isset($_POST['featured'])) {
                         //get the value from form//
@@ -98,21 +98,21 @@
                     if (isset($_FILES['image']['name'])) {
                         // upload image
                         //to uploada image we need image name, source path and destination//
-                        $image_name = $_FILES['image']['name'];
+                        $image = $_FILES['image']['name'];
                         //upload image if image is selected
-                        if ($image_name != "") {
+                        if ($image != "") {
 
 
 
                           //Auto rename uploaded images//
                           //Get the extension of image//
-                          $fileExtension = pathinfo($image_name, PATHINFO_EXTENSION);
+                          $fileExtension = pathinfo($image, PATHINFO_EXTENSION);
                           //Rename image
-                          $image_name = "Food_Category_".rand(000, 999).'.'.$fileExtension;
+                          $image = "Food_Category_".rand(000, 999).'.'.$fileExtension;
 
                           $source_path = $_FILES['image']['tmp_name'];
 
-                          $destination_path = "../images/".$image_name;
+                          $destination_path = "../images/".$image;
 
                           //finally upload image//
                           $upload = move_uploaded_file($source_path, $destination_path);
@@ -131,14 +131,14 @@
 
                     }
                     else {
-                        // Don't upload image and set image_name value as blank
-                        $image_name="";
+                        // Don't upload image and set image value as blank
+                        $image="";
                     }
 
                     //2. Create SQL Quaeary to insert category into database
                     $sql = "INSERT INTO category SET
-                        title = '$title',
-                        image_name = '$image_name',
+                        name = '$name',
+                        image = '$image',
                         featured = '$featured',
                         active = '$active'
                     ";

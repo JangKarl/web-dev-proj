@@ -2,7 +2,7 @@
 <?php include("config/constant.php") ?>
 
 
-    <title>Fresh & Organic Online Grocery Store | Home</title>
+    <!-- <name>Fresh & Organic Online Grocery Store | Home</name> -->
 </head>
 <body>
 
@@ -33,7 +33,7 @@
     <!-- Category Section Starts here -->
     <section class="container-2">
         <div style="text-align: center;">
-            <h1 class="c2-title">Featured Product Category</h1>
+            <h1 class="c2-name">Featured Product Category</h1>
         </div>
         <br>
         <div style="text-align: center;">
@@ -51,10 +51,10 @@
                     // categories available
                     while ($row = mysqli_fetch_assoc($res))
                     {
-                      // get the values like id, title, image
+                      // get the values like id, name, image
                       $category_id = $row['category_id'];
-                      $title = $row['title'];
-                      $image_name = $row['image_name'];
+                      $name = $row['name'];
+                      $image = $row['image'];
                       ?>
 
                       <div style="
@@ -69,9 +69,9 @@
                       cursor: pointer;
                       border-radius: 50px;
                       ">
-                          <?php echo $title; ?>
+                          <?php echo $name; ?>
                           <br>
-                          <img src="images/<?php echo $image_name; ?>" class="img-responsive" width="250px">
+                          <img src="images/<?php echo $image; ?>" class="img-responsive" width="250px">
                       </div>
 
                       <?php

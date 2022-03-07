@@ -64,7 +64,7 @@
         <table class="tbl-full">
             <tr>
                 <th>ID</th>
-                <th>Title</th>
+                <th>name</th>
                 <th>Image</th>
                 <th>Featured</th>
                 <th>Active</th>
@@ -91,8 +91,8 @@
                     // get data and display
                     while ($row=mysqli_fetch_assoc($res)) {
                         $category_id = $row['category_id'];
-                        $title = $row['title'];
-                        $image_name = $row['image_name'];
+                        $name = $row['name'];
+                        $image = $row['image'];
                         $featured = $row['featured'];
                         $active = $row['active'];
 
@@ -100,14 +100,14 @@
 
                         <tr>
                             <td><?php echo $sn++; ?></td>
-                            <td><?php echo $title; ?></td>
+                            <td><?php echo $name; ?></td>
                             <td>
                                 <?php
                                     //check whether the image is available or not
-                                    if($image_name!=""){
+                                    if($image!=""){
                                       //display the image
                                       ?>
-                                      <img src="<?php echo SITEURL;?>../images/<?php echo $image_name;?>" width="80rem">
+                                      <img src="<?php echo SITEURL;?>../images/<?php echo $image;?>" width="80rem">
                                       <?php
                                     }
                                     else{
@@ -120,7 +120,7 @@
                             <td><?php echo $active; ?></td>
                             <td>
                               <a href="<?php echo SITEURL; ?>update-category.php?category_id=<?php echo $category_id;?>" class="btn-secondary">Update Category.</a>
-                              <a href="<?php echo SITEURL; ?>delete-category.php?category_id=<?php echo $category_id;?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
+                              <a href="<?php echo SITEURL; ?>delete-category.php?category_id=<?php echo $category_id;?>&image=<?php echo $image; ?>" class="btn-danger">Delete Category</a>
                             </td>
                         </tr>
 

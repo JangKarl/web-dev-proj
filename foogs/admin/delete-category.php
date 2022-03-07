@@ -3,15 +3,15 @@
     include('../config/constant.php');
 
     //check whether the id and image name is set or not
-    if (isset($_GET['category_id']) AND isset($_GET['image_name'])) {
+    if (isset($_GET['category_id']) AND isset($_GET['image'])) {
         //get the value and delete
         $category_id = $_GET['category_id'];
-        $image_name = $_GET['image_name'];
+        $image = $_GET['image'];
 
         //remove the physical image file if available
-        if ($image_name != '') {
+        if ($image != '') {
             // image is available, so remove it
-            $path = "../images/".$image_name;
+            $path = "../images/".$image;
             //remove the image
             $remove = unlink($path);
 
