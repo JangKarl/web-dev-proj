@@ -76,7 +76,7 @@
                         //Row is greater than 0 or we have data in database
                         while($rows = mysqli_fetch_assoc($result)){
                             //While loop to get all data in database
-                            $id = $rows['id'];
+                            $id = $rows['admin_id'];
                             $first_name = $rows['first_name'];
                             $last_name = $rows['last_name'];
                             $email = $rows['email'];

@@ -60,7 +60,7 @@
         $confirm_password = md5($_POST['confirm_password']);
 
         //Check if current id and current password exist
-        $sql = "SELECT * FROM admin WHERE id = $id AND password = '$current_password'";
+        $sql = "SELECT * FROM admin WHERE admin_id = $id AND password = '$current_password'";
 
         //Execute query
         $result = mysqli_query($conn, $sql);
@@ -77,7 +77,7 @@
                     //Update password
                     $sql2 = "UPDATE admin SET
                         password = '$new_password'
-                        WHERE id = $id
+                        WHERE admin_id = $id
                     ";
 
                     //Execute change password query

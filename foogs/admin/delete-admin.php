@@ -6,7 +6,7 @@
     $id = $_GET['id'];
 
     //SQL query
-    $sql = "DELETE FROM admin WHERE id=$id";
+    $sql = "DELETE FROM admin WHERE admin_id=$id";
 
     //Execute query
     $result = mysqli_query($conn, $sql);
