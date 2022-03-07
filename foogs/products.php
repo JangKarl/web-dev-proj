@@ -58,7 +58,7 @@ if(isset($_POST['add_to_cart'])){
                 
                 <img src="admin/uploaded_img/<?php echo $fetch_product['image']; ?>" alt=""><!-- upper image -->
                 <h3><?php echo $fetch_product['name']; ?></h3><!-- middle displayed name  -->
-                <div class="price"> $ <?php echo $fetch_product['price']; ?>/-</div> <!-- PRICE display -->
+                <div class="price"> ₱ <?php echo $fetch_product['price']; ?> /kg</div> <!-- PRICE display -->
                 <!-- fetching the select item and inserting onto the cart_tbl -->
                 <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
                 <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
