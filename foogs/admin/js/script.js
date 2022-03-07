@@ -14,5 +14,5 @@ window.onscroll = () =>{
 
 document.querySelector('#close-edit').onclick = () =>{
    document.querySelector('.edit-form-container').style.display = 'none';
-   window.location.href = 'manage-inventory.php';
+   window.location.href = 'manage-invetory.php';
 };
