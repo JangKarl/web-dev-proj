@@ -41,11 +41,11 @@
                         <div class="userinfo">
                             <div class="inputbox">
                               <span class="info">First Name</span>
-                              <input type="text" name="firstname" placeholder="Enter your First name" required>
+                              <input type="text" name="first_name" placeholder="Enter your First name" required>
                             </div>
                             <div class="inputbox">
                               <span class="info">Last Name</span>
-                              <input type="text" name="lastname" placeholder="Enter your Last name" required>
+                              <input type="text" name="last_name" placeholder="Enter your Last name" required>
                             </div>
                             <div class="inputbox">
                               <span class="info">Email</span>
@@ -53,7 +53,7 @@
                             </div>
                             <div class="inputbox">
                               <span class="info">Address</span>
-                              <input type="text" name="address" placeholder="Enter your Address" required>
+                              <input type="text" name="bill_address" placeholder="Enter your Address" required>
                             </div>
                             <div class="inputbox">
                               <span class="info">Password</span>
@@ -61,7 +61,7 @@
                             </div>
                             <div class="inputbox">
                               <span class="info">Confirm Password</span>
-                              <input type="password" name="confirm" placeholder="Confirm your password" required>
+                              <input type="password" name="confirm_password" placeholder="Confirm your password" required>
                             </div>
                           </div>
                           <div class="genderinfo">

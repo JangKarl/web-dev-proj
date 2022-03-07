@@ -2,7 +2,7 @@
 
 session_start();
 
-$con = new mysqli('localhost', 'root', '', 'foogs_db');
+$con = new mysqli('localhost', 'root', '', 'foog_db');
 
 $email = $_POST['email'];
 $pass = md5($_POST['password']);
