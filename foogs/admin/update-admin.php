@@ -9,7 +9,7 @@
 
             $id = $_GET['id'];
 
-            $sql = "SELECT * FROM admin WHERE id=$id";
+            $sql = "SELECT * FROM admin WHERE admin_id=$id";
 
             $result = mysqli_query($conn, $sql);
 
@@ -83,7 +83,7 @@
         first_name = '$first_name',
         last_name = '$last_name',
         address = '$address'
-        WHERE id = '$id'
+        WHERE admin_id = '$id'
         ";
 
         //Execute query
