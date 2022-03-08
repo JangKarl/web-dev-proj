@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2022 at 09:07 AM
+-- Generation Time: Mar 07, 2022 at 04:32 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `foogs_db`
+-- Database: `foog_db`
 --
 
 -- --------------------------------------------------------
@@ -28,27 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `first_name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id`, `first_name`, `last_name`, `email`, `password`, `address`) VALUES
-(25, 'asdasd', 'asdasssssaasd', 'asdasd@adasd', '7815696ecbf1c96e6894b779456d330e', 'asd12121212sss'),
-(26, 'asd', 'asd', 'asd@asd.com', '7815696ecbf1c96e6894b779456d330e', 'asd'),
-(27, '1122', '1122', '1122@2211', '3b712de48137572f3849aabd5666a4e3', '2211'),
-(28, '32131', '3211', '12332@asdasd.123', 'caf1a3dfb505ffed0d024130f58c5cfa', '123'),
-(29, 'carl', 'carl', 'carl@carl.com', '4807fa3508b428b1c3ecb99658d85e67', 'carlcarl'),
-(30, 'ugat', 'root', 'root@root.com', 'c4ca4238a0b923820dcc509a6f75849b', 'root under the tree'),
-(31, 'admin', 'root', 'root@admin.com', '63a9f0ea7bb98050796b649e85481845', 'admin root'),
-(32, 'root', 'admin', '1@1.com', 'c4ca4238a0b923820dcc509a6f75849b', '1 and 2');
 
 -- --------------------------------------------------------
 
@@ -61,7 +47,6 @@ CREATE TABLE `cart` (
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `cart_quantity` int(11) NOT NULL,
-  `total` float NOT NULL,
   `order_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -72,9 +57,9 @@ CREATE TABLE `cart` (
 --
 
 CREATE TABLE `category` (
-  `category_id` int(10) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `image_name` varchar(100) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `featured` varchar(10) NOT NULL,
   `active` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -88,10 +73,13 @@ CREATE TABLE `category` (
 CREATE TABLE `order` (
   `order_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `city` varchar(100) NOT NULL,
+  `delivery_address` varchar(255) NOT NULL,
   `zipcode` varchar(30) NOT NULL,
-  `total_price` int(11) NOT NULL
+  `total_price` float NOT NULL,
+  `order_date` datetime NOT NULL,
+  `order_status` varchar(20) NOT NULL,
+  `delivery_date` datetime NOT NULL,
+  `cancellation_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -101,11 +89,11 @@ CREATE TABLE `order` (
 --
 
 CREATE TABLE `order_details` (
-  `order_details_id` int(11) NOT NULL,
+  `odd_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
-  `total_price` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL
+  `quantity` int(11) NOT NULL,
+  `total_price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -116,9 +104,11 @@ CREATE TABLE `order_details` (
 
 CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
-  `product_name` varchar(50) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `price` int(11) NOT NULL
+  `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -129,20 +119,20 @@ CREATE TABLE `product` (
 
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `gender` char(2) NOT NULL
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `bill_address` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `gender` char(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `address`, `password`, `gender`) VALUES
-(1, 'aa', 'ss', 'ss', 'dd', '11', 'f');
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `bill_address`, `password`, `gender`) VALUES
+(1, 'Bryan', 'Arpilleda', 'bryan@gmai.com', 'San, Pedro Laguna', '1234', 'M');
 
 --
 -- Indexes for dumped tables
@@ -152,14 +142,15 @@ INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `address`, `p
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `UNIQUE` (`email`);
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`cart_id`);
+  ADD PRIMARY KEY (`cart_id`),
+  ADD KEY `product_id` (`product_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `category`
@@ -172,28 +163,28 @@ ALTER TABLE `category`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`order_id`),
-  ADD KEY `order_fk0` (`user_id`);
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `order_details`
 --
 ALTER TABLE `order_details`
-  ADD PRIMARY KEY (`order_details_id`),
-  ADD KEY `order_details_fk0` (`order_id`),
-  ADD KEY `order_details_fk1` (`product_id`);
+  ADD PRIMARY KEY (`odd_id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
-  ADD PRIMARY KEY (`product_id`);
+  ADD PRIMARY KEY (`product_id`),
+  ADD KEY `category_id` (`category_id`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -203,7 +194,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `cart`
@@ -215,7 +206,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -227,7 +218,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `odd_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -246,17 +237,30 @@ ALTER TABLE `user`
 --
 
 --
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
 -- Constraints for table `order`
 --
 ALTER TABLE `order`
-  ADD CONSTRAINT `order_fk0` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+  ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
 --
 -- Constraints for table `order_details`
 --
 ALTER TABLE `order_details`
-  ADD CONSTRAINT `order_details_fk0` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`),
-  ADD CONSTRAINT `order_details_fk1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+  ADD CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`),
+  ADD CONSTRAINT `order_details_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+
+--
+-- Constraints for table `product`
+--
+ALTER TABLE `product`
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
