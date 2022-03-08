@@ -17,7 +17,6 @@
     outline: none;
     border: none;
     text-decoration: none;
-    text-transform: capitalize;
     transition: all .2s linear;
     font-family: 'Open Sans', sans-serif;
 }
@@ -618,3 +617,70 @@ div.products {
     border-radius: 25px;
     margin-top: 1rem;
  }
+ /* account.php styles */
+
+.account-container{
+    max-width: 700px;
+    display: flex; 
+    margin: 5% auto;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    border-radius: 25px;
+ }
+    .account-container h1{
+        margin: 15% 3px 0 3px;
+        
+    }
+    .account-container .first-con{
+        text-align: center;
+        flex-basis: 40%;
+        background:linear-gradient(120deg, #aaeb90,#d9fcd8);
+    }
+    .account-container .second-con{
+        flex-basis: 60%;
+        padding: 40px;
+    }
+    .account-container .second-con a{
+        width: 100%;
+        height: 50px;
+        border: 1px solid;
+        background: #12af12;
+        border-radius: 20px;
+        font-size: 18px;
+        color: #ffffff;
+        font-weight: 700;
+        cursor: pointer;
+        outline: none;
+        margin: 5%;
+        padding: 10px;
+    }
+    .account-container .second-con a:hover{
+        background: #038a00;
+        transition: .5s;
+    }    
+    .account-container .second-con input[type="submit"]{
+        width: 100%;
+        height: 50px;
+        border: 1px solid;
+        background: #12af12;
+        border-radius: 20px;
+        font-size: 18px;
+        color: #ffffff;
+        font-weight: 700;
+        cursor: pointer;
+        outline: none;
+        margin: 5%;
+        padding: 10px;
+    }
+    .account-container .second-con input[type="submit"]:hover{
+        background: #038a00;
+        transition: .5s;
+    }
+
+    .account-container .second-con .line{
+        max-width: 500px;
+        border-bottom: solid 0.1rem #038a00;
+    }    
+    .account-container .second-con h3{
+        font-family: 'Rowdies', cursive;;
+        color: #038a00;
+    }

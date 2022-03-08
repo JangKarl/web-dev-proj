@@ -4,11 +4,11 @@ session_start();
 
 $con = new mysqli('localhost', 'root', '', 'foog_db');
 
-$email = $_POST['email'];
+$loggedin_email = $_POST['email'];
 $pass = md5($_POST['password']);
 
 
-$s = "select * from user where email = '$email'and password = '$pass'";
+$s = "select * from user where email = '$loggedin_email'and password = '$pass'";
 
 $result = mysqli_query($con, $s);
 
@@ -22,8 +22,9 @@ if($num == 1){
     $_SESSION['success'] = "<a href='logout.php'>Log out</a>";
     $_SESSION['change-login'] = '<a href="products.php" class="button">Shop Now</a>';
     $_SESSION['account-manipulate'] = '<li><a href="account.php" class="fas fa-user-circle"></a></li';
-    $_SESSION['email'] = $email;
+    $_SESSION['email'] = $loggedin_email;
     $_SESSION['add-cart'] = '<input type="submit" class="btn" value="add to cart" name="add_to_cart">';
+
 }
 else{
     header('location:../loginError.php'); 
