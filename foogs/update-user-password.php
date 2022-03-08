@@ -32,6 +32,7 @@
 
         <div class="account-container">
             <div class="column first-con">
+                <a href="account.php" class="back"><i class="fa-solid fa-circle-left"></i>Back to account</a>
                 <h1>Hello <?php echo $first_name?></h1>
             </div>            
         
