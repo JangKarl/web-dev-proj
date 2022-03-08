@@ -2,7 +2,7 @@
 <?php include("config/constant.php") ?>
 
 
-    <!-- <name>Fresh & Organic Online Grocery Store | Home</name> -->
+    <title>Fresh & Organic Online Grocery Store | Home</title>
 </head>
 <body>
 
@@ -71,7 +71,7 @@
                       ">
                           <?php echo $name; ?>
                           <br>
-                          <img src="images/<?php echo $image; ?>" class="img-responsive" width="250px">
+                          <a href="category.php?id=<?php echo $category_id?>"><img src="images/<?php echo $image; ?>" class="img-responsive" width="250px"></a>
                       </div>
 
                       <?php
