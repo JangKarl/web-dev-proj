@@ -5,7 +5,7 @@ session_start();
 $con = new mysqli('localhost', 'root', '', 'foog_db');
 
 $loggedin_email = $_POST['email'];
-$pass = md5($_POST['password']);
+$pass = $_POST['password'];
 
 
 $s = "select * from user where email = '$loggedin_email'and password = '$pass'";

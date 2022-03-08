@@ -55,9 +55,9 @@
 
         //Get Data from form
         $id = $_POST['id'];
-        $current_password = md5($_POST['current_password']);
-        $new_password = md5($_POST['new_password']);
-        $confirm_password = md5($_POST['confirm_password']);
+        $current_password = $_POST['current_password'];
+        $new_password = $_POST['new_password'];
+        $confirm_password = $_POST['confirm_password'];
 
         //Check if current id and current password exist
         $sql = "SELECT * FROM user WHERE user_id = $id AND password = '$current_password'";
