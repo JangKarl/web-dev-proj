@@ -627,13 +627,14 @@ div.products {
     border-radius: 25px;
  }
     .account-container h1{
-        margin: 15% 3px 0 3px;
+        margin: 3% 3px 0 3px;
         
     }
     .account-container .first-con{
         text-align: center;
         flex-basis: 40%;
         background:linear-gradient(120deg, #aaeb90,#d9fcd8);
+        padding: 3%;
     }
     .account-container .second-con{
         flex-basis: 60%;
@@ -683,4 +684,11 @@ div.products {
     .account-container .second-con h3{
         font-family: 'Rowdies', cursive;;
         color: #038a00;
+    }
+    .account-container .first-con .back{
+        color: #038a00;
+    }    
+    .account-container .first-con .back:hover{
+        color: #038a00;
+        text-decoration: underline;
     }
