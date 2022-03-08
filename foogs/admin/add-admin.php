@@ -66,7 +66,7 @@
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
         $email = $_POST['email'];
-        $password = md5($_POST['password']); //md5 = encrypt password 
+        $password = $_POST['password']; //md5 = encrypt password 
         $address = $_POST['address'];
 
         //Query to save data into database

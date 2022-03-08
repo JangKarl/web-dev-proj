@@ -47,7 +47,7 @@
         //Process for login
         //Get the data from form
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
+        $password = $_POST['password'];
 
         //Query if data match from database
         $sql = "SELECT * FROM admin WHERE email = '$email' AND password = '$password'";
