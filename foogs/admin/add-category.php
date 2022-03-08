@@ -22,9 +22,18 @@
         ?>
         <br><br>
             <!--Add category Form Starts-->
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data" style="text-align: center;">
 
-                <table class="tbl-full">
+                <table style="
+                display: inline-block;
+                margin-top: 1rem;
+                background: rgb(3, 138, 0);
+                color: #fff;
+                padding: .8rem 3rem;
+                font-size: 1.5rem;
+                cursor: pointer;
+                border-radius: 50px;
+                ">
 
                     <tr>
                         <td>Category Name</td>

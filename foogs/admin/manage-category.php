@@ -62,7 +62,7 @@
 
                 <!-- Main body -->
         <section class="display-product-table">
-          <table class="display-product-table">
+          <table>
               <thead>
                   <th>ID</th>
                   <th>name</th>
