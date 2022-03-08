@@ -120,8 +120,8 @@
                               <td><?php echo $featured; ?></td>
                               <td><?php echo $active; ?></td>
                               <td>
-                                <a href="<?php echo SITEURL; ?>update-category.php?category_id=<?php echo $category_id;?>" class="btn-secondary">Update Category.</a>
-                                <a href="<?php echo SITEURL; ?>delete-category.php?category_id=<?php echo $category_id;?>&image=<?php echo $image; ?>" class="btn-danger">Delete Category</a>
+                                <a href="<?php echo SITEURL; ?>delete-category.php?category_id=<?php echo $category_id;?>&image=<?php echo $image; ?>" class="delete-btn" onclick="return confirm('Are you sure you want to delete this?');"> <i class="fas fa-trash"></i> Delete </a>
+                                <a href="<?php echo SITEURL; ?>update-category.php?category_id=<?php echo $category_id;?>" class="option-btn"> <i class="fas fa-edit"></i> Update </a>
                               </td>
                           </tr>
 

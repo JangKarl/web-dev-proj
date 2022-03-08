@@ -38,10 +38,10 @@
                         // categories available
                         while ($row = mysqli_fetch_assoc($res))
                         {
-                          // get the values like id, title, image
+                          // get the values like id, name, image
                           $category_id = $row['category_id'];
-                          $title = $row['title'];
-                          $image_name = $row['image_name'];
+                          $name = $row['name'];
+                          $image = $row['image'];
                           ?>
 
                           <div style="
@@ -55,9 +55,9 @@
                           cursor: pointer;
                           border-radius: 50px;
                           ">
-                              <?php echo $title; ?>
+                              <?php echo $name; ?>
                               <br>
-                              <img src="<?php echo SITEURL;?>../images/<?php echo $image_name; ?>" class="img-responsive" width="250px">
+                              <img src="<?php echo SITEURL;?>../images/<?php echo $image; ?>" class="img-responsive" width="250px">
                           </div>
 
                           <?php
