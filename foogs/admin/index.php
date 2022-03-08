@@ -27,7 +27,7 @@
 
                 <?php
                     //create sql query to display categpries from database
-                    $sql = "SELECT * FROM category WHERE active = 'Yes' AND featured ='Yes' LIMIT 3";
+                    $sql = "SELECT * FROM category WHERE active = 'Yes' AND featured ='Yes'";
                     //execute the query
                     $res = mysqli_query($conn, $sql);
                     //count rows to check whether the category is available or not
