@@ -10,7 +10,7 @@
         if(isset($_GET['id'])){ 
         $id = $_GET['id'];
 
-        $sql = "SELECT category.name, product.name, product.image, product.price
+        $sql = "SELECT product.name, product.image, product.price
         FROM product 
         INNER JOIN category
         ON product.category_id = $id AND category.category_id = $id";

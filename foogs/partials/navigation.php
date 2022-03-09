@@ -23,7 +23,14 @@
                 }
                 ?></li>
 
-                <li><a href="cart.php" class="fas fa-shopping-cart"> <span><?php echo $row_count; ?></span></a></li>
+                <li><?php
+                if(isset($_SESSION['cart-nav'])){
+                    echo $_SESSION['cart-nav'];?>
+                    <span><?php echo $row_count;?></span></a>
+                    <?php
+                }
+                
+                ?></li>
                 <?php 
                 if(isset($_SESSION['account-manipulate']))
                 {
