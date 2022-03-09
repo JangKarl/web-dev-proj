@@ -22,7 +22,7 @@
                     $last_name = $rows['last_name'];
                     $email = $rows['email'];
                     $address = $rows['bill_address'];
-
+                    
                     ?>
                     <div class="account-container">
                         <div class="column first-con">

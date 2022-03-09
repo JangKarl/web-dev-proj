@@ -63,9 +63,6 @@
             $_SESSION['login'] = '<div class="success"> Login Successful. </div>';
             $_SESSION['user'] = $email; //Check if user has account
 
-
-
-
             //Redirect to index.php
             header("location:index.php");
 
