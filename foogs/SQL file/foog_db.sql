@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2022 at 06:35 AM
+-- Generation Time: Mar 10, 2022 at 09:56 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -59,14 +59,6 @@ CREATE TABLE `cart` (
   `order_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `cart_quantity`, `order_date`) VALUES
-(83, 1, 3, 5, '2022-03-10'),
-(84, 1, 4, 1, '2022-03-10');
-
 -- --------------------------------------------------------
 
 --
@@ -115,7 +107,18 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`order_id`, `user_id`, `delivery_address`, `zipcode`, `total_price`, `order_date`, `order_status`, `delivery_date`, `cancellation_date`, `method`, `number`) VALUES
 (28, 20, '123', '123', 49, '2022-03-10 13:17:56', 'Pending', '2022-03-11 13:17:56', '0000-00-00 00:00:00', 'cash on delivery ', 123),
-(29, 1, 'Bulacan', '3000', 90, '2022-03-10 13:20:32', 'Pending', '2022-03-11 13:20:32', '0000-00-00 00:00:00', 'g-cash', 2147483647);
+(29, 1, 'Bulacan', '3000', 90, '2022-03-10 13:20:32', 'Pending', '2022-03-11 13:20:32', '0000-00-00 00:00:00', 'g-cash', 2147483647),
+(30, 1, 'City of Malolos, Bulacan', '3000', 90, '2022-03-10 15:27:10', 'Pending', '2022-03-11 15:27:10', '0000-00-00 00:00:00', 'g-cash', 909090909),
+(35, 1, 'BULACANNN', '123', 90, '2022-03-10 15:47:42', 'Pending', '2022-03-11 15:47:42', '0000-00-00 00:00:00', 'cash on delivery ', 321312312),
+(36, 1, '123', '123123123', 90, '2022-03-10 15:50:35', 'Pending', '2022-03-11 15:50:35', '0000-00-00 00:00:00', 'cash on delivery ', 123123123),
+(37, 1, 'City of Malolos, Bulacan', '3000', 90, '2022-03-10 15:51:26', 'Pending', '2022-03-11 15:51:26', '0000-00-00 00:00:00', 'cash on delivery ', 909090909),
+(38, 1, 'Philippines', '123', 90, '2022-03-10 15:52:07', 'Pending', '2022-03-11 15:52:07', '0000-00-00 00:00:00', 'cash on delivery ', 123),
+(39, 20, 'Malolos', '1234', 20, '2022-03-10 16:18:49', 'Pending', '2022-03-11 16:18:49', '0000-00-00 00:00:00', 'g-cash', 2147483647),
+(40, 20, 'Philippines', 'asd', 120, '2022-03-10 16:31:29', 'Pending', '2022-03-11 16:31:29', '0000-00-00 00:00:00', 'credit card', 2147483647),
+(41, 20, '123', '123', 120, '2022-03-10 16:33:11', 'Pending', '2022-03-11 16:33:11', '0000-00-00 00:00:00', 'g-cash', 123),
+(42, 20, 'PASIG CITY', '123123', 20, '2022-03-10 16:39:49', 'Pending', '2022-03-11 16:39:49', '0000-00-00 00:00:00', 'g-cash', 2147483647),
+(43, 20, 'galaxy', '433', 14, '2022-03-10 16:41:55', 'Pending', '2022-03-11 16:41:55', '0000-00-00 00:00:00', 'credit card', 2147483647),
+(44, 20, 'Mal', '3000', 150, '2022-03-10 16:54:19', 'Pending', '2022-03-11 16:54:19', '0000-00-00 00:00:00', 'credit card', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -127,7 +130,7 @@ CREATE TABLE `order_details` (
   `odd_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
+  `ordered_quantity` int(11) NOT NULL,
   `total_price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -135,9 +138,19 @@ CREATE TABLE `order_details` (
 -- Dumping data for table `order_details`
 --
 
-INSERT INTO `order_details` (`odd_id`, `order_id`, `product_id`, `quantity`, `total_price`) VALUES
+INSERT INTO `order_details` (`odd_id`, `order_id`, `product_id`, `ordered_quantity`, `total_price`) VALUES
 (1, 28, 4, 1, 49),
-(2, 29, 4, 1, 90);
+(2, 29, 4, 1, 90),
+(3, 30, 4, 1, 90),
+(8, 35, 4, 1, 90),
+(9, 36, 4, 1, 90),
+(10, 37, 4, 1, 90),
+(11, 38, 4, 1, 90),
+(12, 39, 4, 1, 20),
+(13, 41, 4, 6, 120),
+(14, 42, 4, 1, 20),
+(15, 43, 3, 1, 14),
+(16, 44, 5, 10, 150);
 
 -- --------------------------------------------------------
 
@@ -187,7 +200,7 @@ INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `bill_address
 (1, 'Bryan', 'Arpilleda', 'bryan@gmai.com', 'San Pedro, Laguna, Philippines', '1234', 'M'),
 (13, 'im', 'groot', 'imroot@user.com', 'galaxy', 'ee11cbb19052e40b07aac0ca060c23ee', 'f'),
 (19, 'user1', 'user1', 'user1@user.com', 'user\'s house', '123123', 'f'),
-(20, 'user', 'dummy', 'dummy@user.com', 'Philippines', '1234', 'm');
+(20, 'dummy', 'user', 'dummy@user.com', 'Malolos, Bulacan', '1234', 'm');
 
 --
 -- Indexes for dumped tables
@@ -255,7 +268,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -267,13 +280,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `odd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `odd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `product`
