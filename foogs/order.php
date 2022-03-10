@@ -24,7 +24,7 @@
                 $sql = "SELECT * FROM orders
                 INNER JOIN user
                 ON orders.user_id = user.user_id
-                WHERE user.user_id = 20
+                WHERE user.user_id = $_SESSION[user_id]
                 ORDER BY orders.order_date DESC;";
                 
                 $result = mysqli_query($conn, $sql);
