@@ -1,6 +1,6 @@
 <?php
 
-@include 'config.php';
+include("config/constant.php");
 
 if(isset($_POST['update_update_btn'])){
     $update_value = $_POST['update_quantity'];
@@ -17,10 +17,10 @@ if(isset($_GET['remove'])){
     header('location:cart.php');
 };
 
-if(isset($_GET['delete_all'])){
-    mysqli_query($conn, "DELETE FROM `cart`");
-    header('location:cart.php');
-}
+// if(isset($_GET['delete_all'])){
+//     mysqli_query($conn, "DELETE FROM `cart`");
+//     header('location:cart.php');
+// }
 
 ?>
 
@@ -53,7 +53,8 @@ if(isset($_GET['delete_all'])){
                 INNER JOIN user 
                     ON cart.user_id = user.user_id
                 INNER JOIN product
-                    ON cart.product_id = product.product_id");
+                    ON cart.product_id = product.product_id
+                WHERE user.user_id = $_SESSION[user_id]");
                 $grand_total = 0;
 
                 if(mysqli_num_rows($select_cart) > 0){
@@ -83,7 +84,7 @@ if(isset($_GET['delete_all'])){
                     <td><a href="products.php" class="option-btn" style="margin-top: 0;">continue shopping</a></td>
                     <td colspan="3">grand total</td>
                     <td>₱<?php echo $grand_total; ?>/-</td>
-                    <td><a href="cart.php?delete_all" onclick="return confirm('are you sure you want to delete all?');" class="delete-btn"> <i class="fas fa-trash"></i> delete all </a></td>
+                    <td></td>
                 </tr>
 
             </tbody>

@@ -20,10 +20,17 @@ if(isset($_POST['add_to_cart'])){
 
     $result = mysqli_query($conn, $sql);
     if($result==TRUE){
-        header("location:products.php");
+        
         $message[] = 'product added to cart succesfully';
+        header("location:products.php");
     }else{
         echo "failed";
     }
+
+    if(isset($message)){
+        foreach($message as $message){
+            echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+        };
+        };
 }
 ?>

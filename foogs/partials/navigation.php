@@ -4,11 +4,6 @@
             <a href="index.php"><img src="images/icon.png" alt="icon.png" style="width: 100px;"></a>
         </div>
 
-        <?php
-            $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
-            $row_count = mysqli_num_rows($select_rows);
-        ?>
-
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
@@ -25,7 +20,7 @@
                 <li><?php
                 if(isset($_SESSION['cart-nav'])){
                     echo $_SESSION['cart-nav'];?>
-                    <span><?php echo $row_count;?></span></a>
+                    <span><?php ?></span></a>
                     <?php
                 }
                 
