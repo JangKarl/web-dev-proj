@@ -21,11 +21,12 @@ if(isset($_POST['order_btn'])){
        ON cart.product_id = product.product_id
    WHERE user.user_id = $_SESSION[user_id]");
    $price_total = 0;
+   $shipping_fee = 50;
    if(mysqli_num_rows($cart_query) > 0){
       while($product_item = mysqli_fetch_assoc($cart_query)){
          $product_name[] = $product_item['name'] .' ('. $product_item['cart_quantity'] .') ';
          $product_price = number_format($product_item['price'] * $product_item['cart_quantity']);
-         $price_total += $product_price;
+         $price_total += ($product_price + $shipping_fee);
       };
    };
    $total_product = implode(', ',$product_name);
@@ -56,28 +57,29 @@ if(isset($_POST['order_btn'])){
            $product_id = $rows['product_id'];
            $quantity = $rows['cart_quantity'];
            $order_id = $rows['order_id'];
+
+           $order_details_query = mysqli_query($conn, "INSERT INTO order_details SET
+           order_id = $order_id,
+           product_id = $product_id,
+           ordered_quantity = $quantity,
+           subtotal_price = $product_price
+           ") or die('query failed');
+       
+      
        }
    }
-
-    $order_details_query = mysqli_query($conn, "INSERT INTO order_details SET
-    order_id = $order_id,
-    product_id = $product_id,
-    ordered_quantity = $quantity,
-    total_price = $price_total
-    ") or die('query failed');
-
 
    $clear_cart = mysqli_query($conn, "DELETE FROM cart WHERE user_id = $_SESSION[user_id]");
 
 
-   if($cart_query && $detail_query && $order_details_query){
+   if($cart_query && $detail_query){
       ?>
       <div class='order-message-container'>
       <div class='message-container'>
          <h3>Thank you for Shopping!</h3>
          <div class='order-detail'>
             <span><?php echo $total_product ?></span>
-            <span class='total'> Total : ₱<?php echo $price_total ?>/-  </span>
+            <span class='total'> Total : ₱<?php echo $price_total ?>(Shipping Fee Added) /-  </span>
          </div>
          <div class='customer-details'>
             <p> Your number : <span><?php echo $number ?></span> </p>
