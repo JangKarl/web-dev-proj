@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2022 at 04:32 AM
+-- Generation Time: Mar 10, 2022 at 06:35 AM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,6 +36,15 @@ CREATE TABLE `admin` (
   `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `first_name`, `last_name`, `email`, `password`, `address`) VALUES
+(4, 'im', 'root', 'imroot@user.com', '63a9f0ea7bb98050796b649e85481845', 'far far away galaxy'),
+(5, 'iam', 'root2', 'iamroot2@admin.com', '9b70d6dbfb1457d05e4e2c2fbb42d7db', 'far far away galaxy 2'),
+(7, 'foogs', 'admin', 'foogs@admin.com', 'admin', 'FOOGS');
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +58,14 @@ CREATE TABLE `cart` (
   `cart_quantity` int(11) NOT NULL,
   `order_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `cart_quantity`, `order_date`) VALUES
+(83, 1, 3, 5, '2022-03-10'),
+(84, 1, 4, 1, '2022-03-10');
 
 -- --------------------------------------------------------
 
@@ -64,13 +81,21 @@ CREATE TABLE `category` (
   `active` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`category_id`, `name`, `image`, `featured`, `active`) VALUES
+(1, 'Fruits', 'Food_Category_236.png', 'Yes', 'Yes'),
+(2, 'Vegetables', 'Food_Category_274.png', 'Yes', 'Yes');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Table structure for table `orders`
 --
 
-CREATE TABLE `order` (
+CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `delivery_address` varchar(255) NOT NULL,
@@ -79,8 +104,18 @@ CREATE TABLE `order` (
   `order_date` datetime NOT NULL,
   `order_status` varchar(20) NOT NULL,
   `delivery_date` datetime NOT NULL,
-  `cancellation_date` datetime NOT NULL
+  `cancellation_date` datetime NOT NULL,
+  `method` varchar(100) NOT NULL,
+  `number` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `user_id`, `delivery_address`, `zipcode`, `total_price`, `order_date`, `order_status`, `delivery_date`, `cancellation_date`, `method`, `number`) VALUES
+(28, 20, '123', '123', 49, '2022-03-10 13:17:56', 'Pending', '2022-03-11 13:17:56', '0000-00-00 00:00:00', 'cash on delivery ', 123),
+(29, 1, 'Bulacan', '3000', 90, '2022-03-10 13:20:32', 'Pending', '2022-03-11 13:20:32', '0000-00-00 00:00:00', 'g-cash', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -96,6 +131,14 @@ CREATE TABLE `order_details` (
   `total_price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `order_details`
+--
+
+INSERT INTO `order_details` (`odd_id`, `order_id`, `product_id`, `quantity`, `total_price`) VALUES
+(1, 28, 4, 1, 49),
+(2, 29, 4, 1, 90);
+
 -- --------------------------------------------------------
 
 --
@@ -110,6 +153,15 @@ CREATE TABLE `product` (
   `quantity` int(11) NOT NULL,
   `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `category_id`, `name`, `image`, `quantity`, `price`) VALUES
+(3, 1, 'Banana', 'banana.png', 0, 14),
+(4, 1, 'cherry', 'cherry.png', 0, 20),
+(5, 2, 'Asparagus', 'asparagus.png', 0, 15);
 
 -- --------------------------------------------------------
 
@@ -132,7 +184,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `bill_address`, `password`, `gender`) VALUES
-(1, 'Bryan', 'Arpilleda', 'bryan@gmai.com', 'San, Pedro Laguna', '1234', 'M');
+(1, 'Bryan', 'Arpilleda', 'bryan@gmai.com', 'San Pedro, Laguna, Philippines', '1234', 'M'),
+(13, 'im', 'groot', 'imroot@user.com', 'galaxy', 'ee11cbb19052e40b07aac0ca060c23ee', 'f'),
+(19, 'user1', 'user1', 'user1@user.com', 'user\'s house', '123123', 'f'),
+(20, 'user', 'dummy', 'dummy@user.com', 'Philippines', '1234', 'm');
 
 --
 -- Indexes for dumped tables
@@ -159,9 +214,9 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indexes for table `order`
+-- Indexes for table `orders`
 --
-ALTER TABLE `order`
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`order_id`),
   ADD KEY `user_id` (`user_id`);
 
@@ -194,43 +249,43 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT for table `orders`
 --
-ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `odd_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `odd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
@@ -244,16 +299,16 @@ ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
 --
--- Constraints for table `order`
+-- Constraints for table `orders`
 --
-ALTER TABLE `order`
-  ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
 --
 -- Constraints for table `order_details`
 --
 ALTER TABLE `order_details`
-  ADD CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`),
+  ADD CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
   ADD CONSTRAINT `order_details_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
 
 --
