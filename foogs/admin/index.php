@@ -63,11 +63,21 @@
                     <i class="fas fa-cart-plus"></i>
                     <h3>Total Orders</h3>
                     <p>Number of Total Active Orders</p>
+                    <?php
+                        $dash_users = mysqli_query($conn, "SELECT * FROM `orders`");
+                        if($user_total = mysqli_num_rows($dash_users)){
+                            echo '<h1>'.$user_total.'</h1>';
+                        }
+                        else{
+                            echo '<h1>No Available Data</h1>';
+                        }
+                    ?>
                 </div>
             </div>
 
             <section class="bottom-card">
-                <h1>Sales Summary</h1>
+                <h1>Sales Summary (Per Category)</h1>
+
                 <div class="sales-graphs">
                 <script type="text/javascript">
                     google.charts.load('current', {'packages':['bar']});
