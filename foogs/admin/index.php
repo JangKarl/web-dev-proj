@@ -18,59 +18,89 @@
             <br>
         <!-- Main body -->
         <!-- Featured Category Section Starts here -->
-        <section class="categories">
-            <div style="text-align: center;">
-                <h2 class="text-center" style="color:rgb(3, 138, 0); font-size: 50px">Featured Product Category</h2>
-            </div>
-            <br>
-            <div style="text-align: center;">
-
-                <?php
-                    //create sql query to display categpries from database
-                    $sql = "SELECT * FROM category WHERE active = 'Yes' AND featured ='Yes'";
-                    //execute the query
-                    $res = mysqli_query($conn, $sql);
-                    //count rows to check whether the category is available or not
-                    $count = mysqli_num_rows($res);
-
-                    if ($count>0)
-                    {
-                        // categories available
-                        while ($row = mysqli_fetch_assoc($res))
-                        {
-                          // get the values like id, name, image
-                          $category_id = $row['category_id'];
-                          $name = $row['name'];
-                          $image = $row['image'];
-                          ?>
-
-                          <div style="
-                          display: inline-block;
-                          margin-top: 1rem;
-                          background: rgb(3, 138, 0);
-                          color: #fff;
-                          padding: .8rem 3rem;
-                          font-size: 1.7rem;
-                          text-align: center;
-                          cursor: pointer;
-                          border-radius: 50px;
-                          ">
-                              <?php echo $name; ?>
-                              <br>
-                              <img src="<?php echo SITEURL;?>../images/<?php echo $image; ?>" class="img-responsive" width="250px">
-                          </div>
-
-                          <?php
+        <div class="main-card">
+                
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Registered Users</h3>
+                    <?php
+                        $dash_users = mysqli_query($conn, "SELECT * FROM `user`");
+                        if($user_total = mysqli_num_rows($dash_users)){
+                            echo '<h1>'.$user_total.'</h1>';
                         }
-                    }
-                    else
-                    {
-                        //categories not available
-                        echo "<div class='error'>Do not have any category yet. </div>";
-                    }
-                ?>
+                        else{
+                            echo '<h1>No Available Data</h1>';
+                        }
+                    ?>
+                </div>
+                <div class="card">
+                    <i class="fas fa-boxes"></i>
+                    <h3>Categories Available</h3>
+                    <?php
+                        $dash_users = mysqli_query($conn, "SELECT * FROM `category`");
+                        if($user_total = mysqli_num_rows($dash_users)){
+                            echo '<h1>'.$user_total.'</h1>';
+                        }
+                        else{
+                            echo '<h1>No Available Data</h1>';
+                        }
+                    ?>
+                </div>
+                <div class="card">
+                    <i class="fas fa-box-open"></i>
+                    <h3>Products Posted</h3>
+                    <?php
+                        $dash_users = mysqli_query($conn, "SELECT * FROM `product`");
+                        if($user_total = mysqli_num_rows($dash_users)){
+                            echo '<h1>'.$user_total.'</h1>';
+                        }
+                        else{
+                            echo '<h1>No Available Data</h1>';
+                        }
+                    ?>
+                </div>
+                <div class="card">
+                    <i class="fas fa-cart-plus"></i>
+                    <h3>Total Orders</h3>
+                    <p>Number of Total Active Orders</p>
+                </div>
             </div>
-        </section>
+
+            <section class="bottom-card">
+                <h1>Sales Summary</h1>
+                <div class="sales-graphs">
+                <script type="text/javascript">
+                    google.charts.load('current', {'packages':['bar']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Year', 'Sales'],
+                        ['2014', 1000],
+                        ['2015', 1170],
+                        ['2016', 660],
+                        ['2017', 1030]
+                        ]);
+
+                        var options = {
+                        chart: {
+                            title: '',
+                            subtitle: '',
+                        }
+                        };
+
+                        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+                        chart.draw(data, google.charts.Bar.convertOptions(options));
+                    }
+                </script>
+
+                <div id="columnchart_material" style="width: auto; height: 600px;"></div>
+                    
+                    </div>
+                </div>
+            </section>
+        </div>
         <!-- Featured Category Section Ends here -->
 
     </div><!-- div for main-content -->    

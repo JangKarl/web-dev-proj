@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
     <title>FOOGS Admin</title>
@@ -44,7 +44,7 @@
                 </a></li>
 
                 <li><a href="manage-order.php">
-                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <i class="fas fa-cart-arrow-down"></i>
                     <span class="nav-itemDisable">Orders</span>
                 </a></li>
 
