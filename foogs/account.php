@@ -27,7 +27,11 @@
                     <div class="account-container">
                         <div class="column first-con">
                         <h1>Hello <?php echo $first_name?></h1><br>
-                        <p><?php 
+                        <p>
+                        
+                        <a href="order.php">Check Orders</a>
+
+                        <?php 
                         if(isset($_SESSION['update'])){
                             echo $_SESSION['update'];//Displaying session message
                             unset($_SESSION['update']);//Removing session message

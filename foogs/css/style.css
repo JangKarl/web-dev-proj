@@ -692,3 +692,18 @@ div.products {
         color: #038a00;
         text-decoration: underline;
     }
+
+/*TABLES*/
+.tbl-full{
+    width: 100%;
+    margin-left: 5px;
+}
+.tbl-full tr th{
+    border: 1px solid gray;
+    text-align: left;
+    padding: 2px 5px 2px ;
+}
+.tbl-full tr td{
+    border-bottom: 2px solid rgb(151, 151, 151);
+    padding: 1%;
+}

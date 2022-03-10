@@ -62,29 +62,32 @@ if(isset($_POST['order_btn'])){
     $order_details_query = mysqli_query($conn, "INSERT INTO order_details SET
     order_id = $order_id,
     product_id = $product_id,
-    quantity = $quantity,
+    ordered_quantity = $quantity,
     total_price = $price_total
     ") or die('query failed');
 
 
+   $clear_cart = mysqli_query($conn, "DELETE FROM cart WHERE user_id = $_SESSION[user_id]");
+
+
    if($cart_query && $detail_query && $order_details_query){
-      echo "
+      ?>
       <div class='order-message-container'>
       <div class='message-container'>
          <h3>Thank you for Shopping!</h3>
          <div class='order-detail'>
-            <span>".$total_product."</span>
-            <span class='total'> Total : ₱".$price_total."/-  </span>
+            <span><?php echo $total_product ?></span>
+            <span class='total'> Total : ₱<?php echo $price_total ?>/-  </span>
          </div>
          <div class='customer-details'>
-            <p> Your number : <span>".$number."</span> </p>
-            <p> Your payment mode : <span>".$method."</span> </p>
+            <p> Your number : <span><?php echo $number ?></span> </p>
+            <p> Your payment mode : <span><?php echo $method ?></span> </p>
             <p>(*pay when product arrives*)</p>
          </div>
             <a href='products.php' class='btn'>Continue Shopping</a>
          </div>
       </div>
-      ";
+      <?php
    }
 
 }

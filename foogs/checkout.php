@@ -41,7 +41,7 @@
         <div class="flex">
             <div class="inputBox">
                 <span>Delivery Address</span>
-                <input type="text" placeholder="Enter delivery address" name="delivery_address" maxlength="11" required>
+                <input type="text" placeholder="Enter delivery address" name="delivery_address" required>
             </div>
             <div class="inputBox">
                 <span>Zipcode</span>
