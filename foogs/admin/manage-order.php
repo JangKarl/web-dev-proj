@@ -25,7 +25,6 @@
                 $sql = "SELECT * FROM orders
                 INNER JOIN user
                 ON orders.user_id = user.user_id
-                /*WHERE user.user_id = $_SESSION[user_id]*/
                 ORDER BY orders.order_date DESC;";
                 
                 $result = mysqli_query($conn, $sql);
@@ -43,8 +42,15 @@
                 <td><?php echo $rows['zipcode'];?></td>
                 <td><?php echo $rows['order_status'];?></td>
                 <td><?php echo $rows['order_date'];?></td>
-                <td><a href="user-order-details.php?order_id=<?php echo $rows['order_id'];?>">Details</a>
-                <a href="user-cancelled-order.php?order_id=<?php echo $rows['order_id'];?>">Cancel</a></td>
+                <td><a href="manage-order-details.php?order_id=<?php echo $rows['order_id'];?>">Details</a>
+                <div class="button-status">
+                        <button>Status</button>
+                        <div>
+                            <a href="admin-order-update.php?order_id=<?php echo $rows['order_id'];?>">Delivered</a>
+                            <a href="admin-order-update.php?order_id=<?php echo $rows['order_id'];?>">Cancelled</a>
+                        </div>
+                </div>
+            </td>
             </tr>
 
 

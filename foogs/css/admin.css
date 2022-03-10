@@ -467,3 +467,45 @@ td input{
     text-transform: none;
  }
 
+ .button-status{
+     display: inline-block;
+     position: relative;
+ }
+ .button-status button{
+    border: none;
+    padding: 8px 16px;
+    background-color: green;
+    color: white;
+    transition: .3s;
+    cursor: pointer;
+ }
+ .button-status button:hover{
+     background-color: lightgreen;
+ }
+ .button-status div{
+     background-color: #fff;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+     z-index: 1;
+     visibility: hidden;
+     position: absolute;
+     min-width: 100%;
+     opacity: 0;
+     transition: .3s;
+ }
+ .button-status:hover div{
+     visibility: visible;
+     opacity: 1;
+ }
+ .button-status div a{
+     display: block;
+     text-decoration: none;
+     padding: 8px;
+     color: lightgreen;
+     transition: .1s;
+     white-space: nowrap;
+ }
+ .button-status div a:hover{
+     background-color: green;
+     color: white;
+ }
+
