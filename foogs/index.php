@@ -13,11 +13,9 @@
         <div class="row">
             <div class="col-2">
                 <h1>Fresh & Organic <br>Online Grocery <br>Store</h1>
-                <p>We supply organic and locally produced foods, as well as preservative-free
-                  products to our customers. All of our products are more nutritious than those available
-                  in conventional grocery shops. So, what are you waiting for? Be good to your health—eat
-                  organic!
-                </p>
+                <p>All you need in one-tap! No need to worry about running out of your daily necessities.</p>
+                <p>Buy groceries conveniently with the best service, amazing deals and promos with affordable and reasonable price and discounts for your daily needs of fresh groceries.</p>
+                <p>We also offer special packages for target groups such as a family-friendly, college focused, and health-enthused customers.</p>
                 <?php
                     if(isset($_SESSION['change-login'])) {
                         echo $_SESSION['change-login'];

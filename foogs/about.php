@@ -14,21 +14,25 @@
         <div class="row">
             <div class="col-3">
                 <h3>Who we are</h3>
-                <p>FOOGS is a fresh and organic online grocery store. We provide our consumers with organic and
-                  locally produced products, as well as preservative-free items. Our overall variety of items
-                  is more healthy than those offered in regular grocery stores. It's also an excellent alternative
-                  for those who are too busy to go to the market and purchase items.
-                </p>
+                <p>Our company will offer the best of service of fresh online groceries shopping to people who are unable to 
+                    conveniently grocery shop themselves.</p>
+                <p>Our job is to take the customers’ orders online and fulfill it before delivering the items to customers 
+                    making sure all of their orders are fresh and safely delivered. </p>
             </div>
             <div class="col-3">
                 <h3>Our Mission</h3>
-                <p>To provide the freshest and organically produced fruits, veggies, and other goods to our consumers.</p>
-                <p>To promote wellness and healthy lifestyle.</p>
-                <p>To strengthen agriculture through promoting local products.
+                <p>We intend to provide our customers with the best online shopping experience from beginning to end, with a 
+                    smart, searchable website, easy-to-follow instructions, clear and secure payment methods, and fast, fresh, 
+                    clean products and high quality delivery. We believe our success relies on our connection with you, on the 
+                    happiness of our employees, and in our ability to build strong relationships within the local community.</p>
+                
             </div>
             <div class="col-3">
                 <h3>Our Vision</h3>
-                <p>Our vision is to make a difference in people's lives by supplying them with fresh and organic items to have a healthy lifestyle.</p>
+                <p>To be an independent, innovative, honest and sustainable cooperative in which customers are able to choose from 
+                    a wide range of goods at reasonable prices. In other words, to be a role-model company online. FOOGS vision is 
+                    to grow by providing clean, high-quality products at reasonable prices in addition to friendly and knowledgeable 
+                    customer service.</p>
             </div>
         </div>
     </div>
