@@ -27,7 +27,8 @@ if(isset($_POST['order_btn'])){
       while($product_item = mysqli_fetch_assoc($cart_query)){
          $product_name[] = $product_item['name'] .' ('. $product_item['cart_quantity'] .') ';
          $product_price = number_format($product_item['price'] * $product_item['cart_quantity']);
-         $price_total += $product_price;
+         $price_total += ((int)$product_item['price'] * (int)$product_item['cart_quantity']);
+        //  $price_total += $product_price;
       }; $total = $price_total + $shipping_fee;
    };
    $total_product = implode(', ',$product_name);
