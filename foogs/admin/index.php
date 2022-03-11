@@ -95,8 +95,7 @@
             <section class="bottom-card">
                 <h1>Sales Summary</h1>
                         <?php
-                            $con = new mysqli('localhost', 'root', '','foog_db');
-                            $query = $con->query("SELECT product.name as products, SUM(order_details.ordered_quantity) as sold 
+                            $query = $conn->query("SELECT product.name as products, SUM(order_details.ordered_quantity) as sold 
                             FROM `order_details` JOIN `product` WHERE order_details.product_id = product.product_id 
                             GROUP BY order_details.product_id"); 
 
