@@ -1,4 +1,6 @@
-<?php include('partials/navbar.php');?>
+<?php include('partials/navbar.php');
+
+@include 'config.php';?>
 
     <!-- Main Content Section Starts -->
     <div class="main-content">
@@ -7,7 +9,6 @@
         </div>
         <br>
         <?php
-
             if (isset($_SESSION['add'])) {
                 echo $_SESSION['add'];
                 unset($_SESSION['add']);
@@ -17,7 +18,6 @@
                 echo $_SESSION['upload'];
                 unset($_SESSION['upload']);
             }
-
         ?>
         <br><br>
             <!--Add category Form Starts-->
@@ -136,7 +136,6 @@
                               die();
                           }
                         }
-
                     }
                     else {
                         // Don't upload image and set image value as blank
@@ -155,17 +154,13 @@
                     $res = mysqli_query($conn, $sql);
 
                     //4. Chaeck whether the query executed or not and data added or not//
-                    if ($res==true) {
-                        //Query executed and category added
+                    if ($res==true){
                         $_SESSION['add'] = "<div class='success'>Category Added Successfully.</div>";
-                        //redirect to Manage Category Page//
-                        header('location:'.SITEURL.'manage-category.php');
+                        // header('location:manage-category.php');
                     }
-                    else {
-                        //Failed to Add category//
+                    else{
                         $_SESSION['add'] = "<div class='error'>Failed to add category.</div>";
-                        //redirect to Manage Category Page//
-                        header('location:'.SITEURL.'add-category.php');
+                        // header('location:add-category.php');
                     }
                 }
             ?>

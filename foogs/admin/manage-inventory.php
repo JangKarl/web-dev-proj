@@ -73,7 +73,7 @@
                 <tr>
                     <td><img src="uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
                     <td><?php echo $row['name']; ?></td>
-                    <td>$<?php echo $row['price']; ?>/-</td>
+                    <td> ₱ <?php echo $row['price']; ?>/kg</td>
                     <td>
                     <a href="manage-inventory.php?delete=<?php echo $row['product_id']; ?>" class="delete-btn" onclick="return confirm('Are you sure you want to delete this?');"> <i class="fas fa-trash"></i> Delete </a>
                     <a href="manage-inventory.php?edit=<?php echo $row['product_id']; ?>" class="option-btn"> <i class="fas fa-edit"></i> Update </a>
