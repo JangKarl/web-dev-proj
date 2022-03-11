@@ -3,13 +3,13 @@
         <div class="row">
             <div class="col-2">
                 <div class="icon">
-                    <i class="fa-solid fa-map-pin"></i><p>Philippines</p>      
+                    <i class="fa-solid fa-map-pin"></i><p>71 N. Zamora St. Metro Manila, Philippines</p>     
                 </div>
                 <div class="icon">
-                    <i class="fa-solid fa-phone"></i><p>0909-0909-990</p>
+                    <i class="fa-solid fa-phone"></i><p>0939-4639-990</p>
                 </div>
                 <div class="icon">
-                    <i class="fa-solid fa-at"></i><p>support@company.com</p> 
+                    <i class="fa-solid fa-at"></i><p>support@foogs.com</p> 
                 </div>   
             </div>
             <div class="col-2">
