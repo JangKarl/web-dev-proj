@@ -66,9 +66,9 @@ if(isset($_POST['order_btn'])){
            order_id = $order_id,
            product_id = $product_id,
            ordered_quantity = $quantity,
+           subtotal_price = $quantity * $price
            ") or die('query failed');
        
-      
        }
    }
 
