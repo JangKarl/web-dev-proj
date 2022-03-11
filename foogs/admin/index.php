@@ -61,7 +61,16 @@
                 </div>
                 <div class="card">
                     <i class="fas fa-cart-plus"></i>
-                    <h3>Total Orders</h3>
+                    <h3>Total Orders :
+                        <?php 
+                        $dash_main_orders = mysqli_query($conn, "SELECT * FROM orders");
+                        if($rows = mysqli_num_rows($dash_main_orders)){
+                            echo $rows;
+                        }else{
+                            echo 0;
+                        }
+                        ?>
+                    </h3>
                     <?php
                         $dash_orders = mysqli_query($conn, "SELECT * FROM `orders`
                         WHERE order_status = 'Pending'");
