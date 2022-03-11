@@ -13,7 +13,11 @@
         <div class="row">
             <div class="col-2">
                 <h1>Fresh & Organic <br>Online Grocery <br>Store</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, nam velit, esse molestias quasi recusandae, aperiam explicabo ipsa eos totam consequuntur dicta tempora? Excepturi, quasi!</p>
+                <p>We supply organic and locally produced foods, as well as preservative-free
+                  products to our customers. All of our products are more nutritious than those available
+                  in conventional grocery shops. So, what are you waiting for? Be good to your health—eat
+                  organic!
+                </p>
                 <?php
                     if(isset($_SESSION['change-login'])) {
                         echo $_SESSION['change-login'];
