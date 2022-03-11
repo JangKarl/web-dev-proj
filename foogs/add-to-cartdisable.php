@@ -20,7 +20,6 @@ if(isset($_POST['add_to_cart'])){
 
     $result = mysqli_query($conn, $sql);
     if($result==TRUE){
-        
         $message[] = 'product added to cart succesfully';
         header("location:products.php");
     }else{
