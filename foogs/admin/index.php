@@ -91,40 +91,70 @@
                 </div>
             </div>
 
+
             <section class="bottom-card">
                 <h1>Sales Summary</h1>
+                        <?php
+                            $con = new mysqli('localhost', 'root', '','foog_db');
+                            $query = $con->query("SELECT product.name as products, SUM(order_details.ordered_quantity) as sold 
+                            FROM `order_details` JOIN `product` WHERE order_details.product_id = product.product_id 
+                            GROUP BY order_details.product_id"); 
 
-                <div class="sales-graphs">
-                <script type="text/javascript">
-                    google.charts.load('current', {'packages':['bar']});
-                    google.charts.setOnLoadCallback(drawChart);
+                            foreach($query as $data){
+                                $products[] = $data['products'];
+                                $sold[] = $data['sold'];
+                            }
+                        ?>
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <script>
+                    const labels = <?php echo json_encode($products)?>;
+                    const data = {
+                        labels: labels,
+                        datasets: [{
+                            label: 'My First Dataset',
+                            data: <?php echo json_encode($sold)?>,
+                            backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(201, 203, 207, 0.2)'
+                            ],
+                            borderColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 205, 86)',
+                            'rgb(75, 192, 192)',
+                            'rgb(54, 162, 235)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    };
 
-                    function drawChart() {
-                        var data = google.visualization.arrayToDataTable([
-                        ['Year', 'Sales'],
-                        ['2014', 1000],
-                        ['2015', 1170],
-                        ['2016', 660],
-                        ['2017', 1030]
-                        ]);
+                    const config = {
+                        type: 'bar',
+                        data: data,
+                        options: {
+                            scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                            }
+                        },
+                    };
 
-                        var options = {
-                        chart: {
-                            title: '',
-                            subtitle: '',
-                        }
-                        };
-
-                        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-                        chart.draw(data, google.charts.Bar.convertOptions(options));
-                    }
+                    const myChart = new Chart(
+                        document.getElementById('myChart'),
+                        config
+                    );
                 </script>
 
-                <div id="columnchart_material" style="width: auto; height: 600px;"></div>
-                    
-                    </div>
-                </div>
             </section>
         </div>
         <!-- Featured Category Section Ends here -->
