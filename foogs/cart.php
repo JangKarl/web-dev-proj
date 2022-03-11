@@ -77,7 +77,6 @@ if(isset($_GET['remove'])){
 
                 <?php
                     $grand_total += ((int)$fetch_cart['price'] * (int)$fetch_cart['cart_quantity']);
-                    $grand_total = number_format($grand_total);
                     // echo gettype($grand_total);//integer
                     // echo gettype($sub_total);//string
                     };
