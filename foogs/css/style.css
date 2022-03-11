@@ -316,18 +316,18 @@ div.products {
 .btn:hover,
 .option-btn:hover,
 .delete-btn:hover{
-   background-color: rgb(54, 157, 54);
+   background-color: greenyellow;
 }
 .option-btn i,
 .delete-btn i{
    padding-right: .5rem;
 }
 .option-btn{
-   background-color: greenyellow;
+   background-color: rgb(54, 157, 54);
 }
 .delete-btn{
    margin-top: 0;
-   background-color: rgb(13, 67, 0);
+   background-color: rgb(18, 92, 0);
 }
 .back-btn{
    display: block;
@@ -342,6 +342,14 @@ div.products {
    margin-top: 1rem;
    margin-left: 1rem;
 }
+.heading-acc{
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    color:green;
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+ }
 
 
 /* products section */
@@ -633,7 +641,7 @@ div.products {
  /* account.php styles */
 
 .account-container{
-    max-width: 700px;
+    max-width: 100%;
     display: flex; 
     margin: 5% auto;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
@@ -672,7 +680,7 @@ div.products {
         transition: .5s;
     }    
     .account-container .second-con input[type="submit"]{
-        width: 100%;
+        width: 90%;
         height: 50px;
         border: 1px solid;
         background: #12af12;
@@ -689,10 +697,23 @@ div.products {
         background: #038a00;
         transition: .5s;
     }
-
+    .content-center{
+        display: block;
+        margin-top: 1rem;
+    
+    }    
+    .button-center{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        justify-items: center;
+    }
     .account-container .second-con .line{
-        max-width: 500px;
+        max-width: 100%;
         border-bottom: solid 0.1rem #038a00;
+    }
+    .account-container .second-con strong{
+        font-size: 20px;
     }    
     .account-container .second-con h3{
         font-family: 'Rowdies', cursive;;

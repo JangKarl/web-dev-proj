@@ -32,19 +32,24 @@
 
         <div class="account-container">
             <div class="column first-con">
+                <br>
+                <h1>Hello, <?php echo $first_name?></h1>
+                <br><br><br><br><br><br><br>
                 <a href="account.php" class="back"><i class="fa-solid fa-circle-left"></i>Back to account</a>
-                <h1>Hello <?php echo $first_name?></h1>
+                
             </div>            
         
         <div class="column second-con">
-            <h3>Change Password</h3>
+            <h3 class="heading-acc">Change Password</h3>
             <div class="line"></div>
             <form action="" method="POST">
-                <strong>Old Password:</strong><br><input type="password" name="current_password" placeholder="Current password"><br>
-                <strong>New Password:</strong><br><input type="password" name="new_password" placeholder="New password"><br>
-                <strong>Confirm Password:</strong><br><input type="password" name="confirm_password" placeholder="Confirm password"><br><br>
-                <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <input type="submit" name="submit" value="Change Password">
+                <div class="content-center">
+                    <strong>Old Password:</strong><br><input type="password" name="current_password" placeholder="Current password"><br>
+                    <strong>New Password:</strong><br><input type="password" name="new_password" placeholder="New password"><br>
+                    <strong>Confirm Password:</strong><br><input type="password" name="confirm_password" placeholder="Confirm password"><br><br>
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                    <input type="submit" name="submit" value="Change Password">
+                </div>
             </form>
         </div>
         </div>

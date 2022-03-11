@@ -26,10 +26,10 @@
                     ?>
                     <div class="account-container">
                         <div class="column first-con">
-                        <h1>Hello <?php echo $first_name?></h1><br>
+                        <h1>Hello, <?php echo $first_name?></h1><br><br><br><br><br><br><br><br><br><br><br>
                         <p>
                         
-                        <a href="order.php">Check Orders</a>
+                        <a class="option-btn" href="order.php">Check Orders</a>
 
                         <?php 
                         if(isset($_SESSION['update'])){
@@ -49,16 +49,23 @@
                             unset($_SESSION['change-pwd']);//Removing session message                
                         }  
                         ?></p>
+
                         </div>
                         <div class="column second-con">
-                        <h3>Account Information</h3>
+                        <h3 class="heading-acc">Account Information</h3>
                         <div class="line"></div>
-                        <strong>First Name:</strong><p><?php echo $first_name?></p>
-                        <strong>Last Name:</strong><p><?php echo $last_name?></p>
-                        <strong>Email:</strong><p><?php echo $email?></p>
-                        <strong>Address:</strong><p><?php echo $address?></p><br><br>
-                        <a href="update-user-password.php?id=<?php echo$id;?>" class="secondary-btn-change">Password</a>
-                        <a href="update-user.php?id=<?php echo$id;?>" class="secondary-btn-update">Update</a>
+                        <div class="content-center">
+                            <strong>First Name:</strong><p><?php echo $first_name?></p>
+                            <strong>Last Name:</strong><p><?php echo $last_name?></p>
+                            <strong>Email:</strong><p><?php echo $email?></p>
+                            <strong>Address:</strong><p><?php echo $address?></p><br><br>
+                        </div>
+
+                        <div class="button-center">
+                            <a href="update-user-password.php?id=<?php echo$id;?>" class="secondary-btn-change">Password</a>
+                            <a href="update-user.php?id=<?php echo$id;?>" class="secondary-btn-update">Update</a>
+                        </div>
+                        
 
                         </div>
                     </div>

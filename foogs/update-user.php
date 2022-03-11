@@ -31,19 +31,22 @@
 
         <div class="account-container">
             <div class="column first-con">
+            <h1>Hello, <?php echo $first_name?></h1>
+            <br><br><br><br><br><br><br>
             <a href="account.php" class="back"><i class="fa-solid fa-circle-left"></i>Back to account</a>
-            <h1>Hello <?php echo $first_name?></h1>
             </div>
             <div class="column second-con">
-                <h3>Update Information</h3>
+                <h3 class="heading-acc">Update Information</h3>
                 <div class="line"></div>
-                <form action="" method="POST">
-                    <strong>First Name:</strong><br><input type="text" name="first_name" value="<?php echo $first_name?>"><br>
-                    <strong>Last Name:</strong><br><input type="text" name="last_name" value="<?php echo $last_name?>"><br>
-                    <strong>Address:</strong><br><input type="text" name="bill_address" value="<?php echo $address?>"><br><br>
-                    <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <input type="submit" name="submit" class="secondary-btn-update" value="Update Account">
-                </form>
+                <div class="content-center">
+                    <form action="" method="POST">
+                        <strong>First Name:</strong><br><input type="text" name="first_name" value="<?php echo $first_name?>"><br>
+                        <strong>Last Name:</strong><br><input type="text" name="last_name" value="<?php echo $last_name?>"><br>
+                        <strong>Address:</strong><br><input type="text" name="bill_address" value="<?php echo $address?>"><br><br>
+                        <input type="hidden" name="id" value="<?php echo $id; ?>">
+                        <input type="submit" name="submit" class="secondary-btn-update" value="Update Account">
+                    </form>
+                </div>
             </div>
         </div>
 
