@@ -1,22 +1,54 @@
+<?php 
+include("config/constant.php");
+//inserting to cart process
+
+if(isset($_POST['add_to_cart'])){
+
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $product_id = $_POST['product_id'];
+    $order_date = date("Y-m-d");
+    $product_quantity = 1;
+    
+    $checking_cart = mysqli_query($conn, "SELECT * FROM cart
+    INNER JOIN product
+    ON cart.product_id = product.product_id
+    WHERE cart.product_id = $product_id");
+
+    if(mysqli_num_rows($checking_cart) > 0){
+        $message[] = 'Product already added to cart';
+    }else{
+        $product_to_cart = mysqli_query($conn, "INSERT INTO cart SET
+        user_id = $_SESSION[user_id],
+        product_id = '$product_id',
+        cart_quantity = '$product_quantity',
+        order_date = '$order_date'
+        ");
+        $message[] = 'Product added to cart';
+    }
+
+}
+?>
+
 <?php include("partials/html-head.php") ?>
 
 <?php include("partials/navigation.php") ?>
     
-
     <?php
-    //displayin messages
     if(isset($message)){
     foreach($message as $message){
         echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+        };
     };
-    };
-
     ?>
+    
 
     <!-- container -->
     <div class="container">
 
     <section class="products">
+        
         <h1 class="heading">All Available Products</h1>
 
         <div class="box-container">
@@ -29,7 +61,7 @@
             ?>
 
             <!-- displaying on input tags -->
-            <form action="add-to-cart.php" method="post">
+            <form action="" method="post">
             <div class="box">
                 
                 <img src="admin/uploaded_img/<?php echo $fetch_product['image']; ?>" alt=""><!-- upper image -->

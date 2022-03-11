@@ -122,7 +122,7 @@
                     const data = {
                         labels: labels,
                         datasets: [{
-                            label: 'My First Dataset',
+                            label: '',
                             data: <?php echo json_encode($sold)?>,
                             backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',

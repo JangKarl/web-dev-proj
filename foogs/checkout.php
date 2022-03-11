@@ -83,7 +83,7 @@ if(isset($_POST['order_btn'])){
          <h3>Thank you for Shopping!</h3>
          <div class='order-detail'>
             <span>".$total_product."</span>
-            <span class='total'> Total : ₱ ".$total." (Shipping Fee Added) /-  </span>
+            <span class='total'> Total : ₱ ".$total." (Shipping Fee Added)  </span>
          </div>
          <div class='customer-details'>
             <p> Your number : <span>".$number."</span> </p>
