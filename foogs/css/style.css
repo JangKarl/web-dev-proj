@@ -732,7 +732,7 @@ div.products {
     width: 100%;
     margin-left: 5px;
 }
-.tbl-full tr:nth-child(even){
+.tbl-full tr:nth-child(odd){
     background-color: rgb(232, 232, 232);
 }
 .tbl-full tr th{

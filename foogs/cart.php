@@ -71,19 +71,21 @@ if(isset($_GET['remove'])){
                             <input type="submit" value="update" name="update_update_btn"> <!-- buttong -->
                         </form>   
                     </td>
-                    <td>₱<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['cart_quantity']); ?>/-</td>
+                    <td>₱<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['cart_quantity']); ?></td>
                     <td><a href="cart.php?remove=<?php echo $fetch_cart['cart_id']; ?>" onclick="return confirm('remove item from cart?')" class="delete-btn"> <i class="fas fa-trash"></i> remove</a></td>
                 </tr>
-                
+
                 <?php
-                    $grand_total += $sub_total;  
+                    $grand_total += ((int)$fetch_cart['price'] * (int)$fetch_cart['cart_quantity']);
+                    // echo gettype($grand_total);//integer
+                    // echo gettype($sub_total);//string
                     };
                 };
                 ?>
                 <tr class="table-bottom">
                     <td><a href="products.php" class="option-btn" style="margin-top: 0;">continue shopping</a></td>
                     <td colspan="3">grand total</td>
-                    <td>₱<?php echo $grand_total; ?>/-</td>
+                    <td>₱<?php echo $grand_total;?></td>
                     <td></td>
                 </tr>
 
