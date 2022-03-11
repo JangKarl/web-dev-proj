@@ -24,7 +24,7 @@
                     <?php 
                         $order_id = $_GET['order_id'];
 
-                        $sql = "SELECT * FROM orders INNER JOIN user ON orders.user_id = user.user_id WHERE /*user.user_id = $_SESSION[user_id] AND*/ orders.order_id = $order_id;"; 
+                        $sql = "SELECT * FROM orders INNER JOIN user ON orders.user_id = user.user_id WHERE orders.order_id = $order_id;"; 
 
                         $result = mysqli_query($conn, $sql);
 

@@ -45,7 +45,7 @@
 
                 <li><a href="manage-order.php">
                     <i class="fas fa-cart-arrow-down"></i>
-                    <span class="nav-itemDisable">Orders</span>
+                    <span class="nav-item">Orders</span>
                 </a></li>
 
                 <li><a href="#">
