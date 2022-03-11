@@ -8,6 +8,7 @@
             <i class="fas fa-user-cog"></i>
         </div>
         <!-- Main body -->
+        <br>
         <table class="tbl-full">
             <thead>
                 <th>Order ID</th>
