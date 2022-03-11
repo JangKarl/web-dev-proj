@@ -5,8 +5,9 @@
 </head>
 <body>
 <?php include("partials/navigation.php") ?>
-
-    <h1>Orders</h1>
+<br>
+    <h1 class="heading">Orders</h1>
+    <br>
         <table class="tbl-full">
             <thead>
                 <th>Order ID</th>
@@ -24,7 +25,7 @@
                 $sql = "SELECT * FROM orders
                 INNER JOIN user
                 ON orders.user_id = user.user_id
-                WHERE user.user_id = $_SESSION[user_id]/*20*/
+                WHERE user.user_id = $_SESSION[user_id]
                 ORDER BY orders.order_date DESC;";
                 
                 $result = mysqli_query($conn, $sql);
@@ -42,8 +43,8 @@
                 <td><?php echo $rows['zipcode'];?></td>
                 <td><?php echo $rows['order_status'];?></td>
                 <td><?php echo $rows['order_date'];?></td>
-                <td><a href="user-order-details.php?order_id=<?php echo $rows['order_id'];?>">Details</a>
-                <a href="user-cancelled-order.php?order_id=<?php echo $rows['order_id'];?>">Cancel</a></td>
+                <td><a class="option-btn" href="user-order-details.php?order_id=<?php echo $rows['order_id'];?>">Details</a><br>
+                <a class="delete-btn" href="user-cancelled-order.php?order_id=<?php echo $rows['order_id'];?>">Cancel</a></td>
             </tr>
 
 
@@ -54,6 +55,7 @@
     ?>
                 </tbody>
         </table>
+        <br><br><br><br><br><br><br><br>
 
 <?php include("partials/footer.php") ?>
 

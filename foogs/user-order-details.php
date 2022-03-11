@@ -6,10 +6,10 @@
 <body>
 <?php include("partials/navigation.php") ?>
 
-<a href="order.php"><-Back</a>
-    <h1>Order Details</h1>
-    <br> 
-    <h3>Billing Details</h3> <br>
+<a href="order.php" class="back-btn"><-Back</a>
+
+    <h1 class="heading">Order Details</h1>
+    <h3>&nbsp;&nbsp;Billing Details</h3>
     <table class="tbl-full">
         <thead>
             <th>First Name</th>
@@ -48,7 +48,7 @@
     </table>
     <br>
 
-    <h3>Order Summary</h3><br>
+    <h3>&nbsp;&nbsp;Order Summary</h3>
     <table class="tbl-full">
         <thead>
             <th>Subtotal</th>
@@ -86,7 +86,7 @@
         </tbody>
     </table>
 
-    <h3>Order Details</h3><br>
+    <br><h3>&nbsp;&nbsp;Order Details</h3>
     <table class="tbl-full">
         <thead>
             <th>Order Id</th>
@@ -120,7 +120,7 @@
         </tbody>
     </table>
 
-    <h3>Ordered Items</h3><br>
+    <br><h3>&nbsp;&nbsp;Ordered Items</h3>
     <table class="tbl-full">
         <thead>
             <th>Product Name</th>
@@ -157,7 +157,7 @@
             ?> 
         </tbody>
     </table>
-
+    <br><br><br>
 
 
 

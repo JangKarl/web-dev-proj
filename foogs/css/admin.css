@@ -254,21 +254,23 @@ a:hover{
 .main-btitle{
     text-align: center;
 }
+
 /* table */
 .tbl-full{
     width: 100%;
     margin-left: 5px;
 }
+.tbl-full tr:nth-child(even){
+    background-color: rgb(232, 232, 232);
+}
 .tbl-full tr th{
-    border: 1px solid gray;
+    border: 2px solid green;
     text-align: left;
     padding: 2px 5px 2px ;
 }
 .tbl-full tr td{
-    border-bottom: 2px solid rgb(151, 151, 151);
     padding: 1%;
 }
-
 .tbl-30{
     width: 50%;
 }
