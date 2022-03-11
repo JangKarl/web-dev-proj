@@ -23,7 +23,7 @@
                 WHERE user.user_id = $_SESSION[user_id]");
                 $total = 0;
                 $grand_total = 0;
-                $shipping_fee = 50;
+
                 if(mysqli_num_rows($select_cart) > 0){
                     while($fetch_cart = mysqli_fetch_assoc($select_cart)){
                     $total_price = number_format($fetch_cart['price'] * $fetch_cart['cart_quantity']);
@@ -36,7 +36,7 @@
                 echo "<div class='display-order'><span>your cart is empty!</span></div>";
             }
             ?>
-            <span class="grand-total"> grand total : ₱<?= $grand_total ; ?> /- + 50 Shipping Fee </span>
+            <span class="grand-total"> grand total : ₱<?= $grand_total ; ?> /- + ₱50 Shipping Fee </span>
         </div>
 
         <div class="flex">

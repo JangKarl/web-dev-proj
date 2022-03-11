@@ -47,8 +47,8 @@
                 <div class="button-status">
                         <button>Status</button>
                         <div>
-                            <a href="admin-order-update.php?order_id=<?php echo $rows['order_id'];?>">Delivered</a>
-                            <a href="admin-order-update.php?order_id=<?php echo $rows['order_id'];?>">Cancelled</a>
+                            <a href="admin-order-update.php?order_id=<?php echo $rows['order_id'];?>&order_status=delivered">Delivered</a>
+                            <a href="admin-order-update.php?order_id=<?php echo $rows['order_id'];?>&order_status=cancelled">Cancelled</a>
                         </div>
                 </div>
             </td>

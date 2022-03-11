@@ -20,6 +20,7 @@
         <tbody>
             <?php 
                 $order_id = $_GET['order_id'];
+                $order_status = $_GET['order_status'];
 
                 $sql = "SELECT * FROM orders INNER JOIN user ON orders.user_id = user.user_id WHERE user.user_id = $_SESSION[user_id] AND orders.order_id = $order_id;"; 
 
@@ -94,27 +95,35 @@
         </thead>
         <tbody>
             <?php
-            $sql = "SELECT * FROM orders
+            $sql = "UPDATE orders SET 
+            order_status = '$order_status'
             WHERE order_id = $order_id;";
 
             $result = mysqli_query($conn, $sql);
 
             if($result == TRUE){
-                $count = mysqli_num_rows($result);
+                $sql2 = "SELECT * FROM orders
+                WHERE order_id = $order_id;";
 
-                if($count > 0){
-                    while($rows = mysqli_fetch_assoc($result)){
-                        ?>
-                        <tr>
-                            <td><?php echo $rows['order_id']?></td>
-                            <td><?php echo $rows['order_date']?></td>
-                            <td><?php echo $rows['order_status']?></td>
-                        </tr>
-                
-                        <?php
+                $result2 = mysqli_query($conn, $sql2);
+
+                if($result2 == TRUE){
+                    $count = mysqli_num_rows($result2);
+
+                    if($count > 0){
+                        while($rows = mysqli_fetch_assoc($result2)){
+                            ?>
+                            <tr>
+                                <td><?php echo $rows['order_id']?></td>
+                                <td><?php echo $rows['order_date']?></td>
+                                <td><?php echo $rows['order_status']?></td>
+                            </tr>
+                    
+                            <?php
+                        }
                     }
                 }
-            }
+        }
             ?> 
         </tbody>
     </table>

@@ -62,21 +62,37 @@
                 <div class="card">
                     <i class="fas fa-cart-plus"></i>
                     <h3>Total Orders</h3>
-                    <p>Number of Total Active Orders</p>
                     <?php
-                        $dash_users = mysqli_query($conn, "SELECT * FROM `orders`");
-                        if($user_total = mysqli_num_rows($dash_users)){
-                            echo '<h1>'.$user_total.'</h1>';
+                        $dash_orders = mysqli_query($conn, "SELECT * FROM `orders`
+                        WHERE order_status = 'Pending'");
+                        $dash_orders2 = mysqli_query($conn, "SELECT * FROM `orders`
+                        WHERE order_status = 'Cancelled'");
+                        $dash_orders3 = mysqli_query($conn, "SELECT * FROM `orders`
+                        WHERE order_status = 'Delivered'");
+                        if($orders_total = mysqli_num_rows($dash_orders)){
+                            echo '<h3>Pending | '.$orders_total. '</h3>';
                         }
                         else{
-                            echo '<h1>No Available Data</h1>';
+                            echo '<h3>Pending | 0 </h3>';
+                        }
+                        if($orders_total2 = mysqli_num_rows($dash_orders2)){
+                            echo '<h3>Cancelled | '.$orders_total2. '</h3>';
+                        }
+                        else{
+                            echo '<h3>Cancelled | 0 </h3>';
+                        }                        
+                        if($orders_total3 = mysqli_num_rows($dash_orders3)){
+                            echo '<h3>Delivered | '.$orders_total3. '</h3>';
+                        }
+                        else{
+                            echo '<h3>Delivered | 0 </h3>';
                         }
                     ?>
                 </div>
             </div>
 
             <section class="bottom-card">
-                <h1>Sales Summary (Per Category)</h1>
+                <h1>Sales Summary</h1>
 
                 <div class="sales-graphs">
                 <script type="text/javascript">

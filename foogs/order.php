@@ -43,8 +43,17 @@
                 <td><?php echo $rows['zipcode'];?></td>
                 <td><?php echo $rows['order_status'];?></td>
                 <td><?php echo $rows['order_date'];?></td>
-                <td><a class="option-btn" href="user-order-details.php?order_id=<?php echo $rows['order_id'];?>">Details</a><br>
-                <a class="delete-btn" href="user-cancelled-order.php?order_id=<?php echo $rows['order_id'];?>">Cancel</a></td>
+                <td><a class="option-btn" href="user-order-details.php?order_id=<?php echo $rows['order_id'];?>&order_status=<?php echo $rows['order_status']?>">Details</a><br>
+                <?php 
+                if ($rows['order_status'] != 'cancelled' && $rows['order_status'] != 'delivered'){
+                    ?>
+                    <a class="delete-btn" href="user-cancelled-order.php?order_id=<?php echo $rows['order_id'];?>&order_status=cancelled">Cancel</a>
+                    <?php
+                }
+                
+                ?>
+            
+            </td>
             </tr>
 
 

@@ -21,13 +21,14 @@ if(isset($_POST['order_btn'])){
        ON cart.product_id = product.product_id
    WHERE user.user_id = $_SESSION[user_id]");
    $price_total = 0;
+   $total = 0;
    $shipping_fee = 50;
    if(mysqli_num_rows($cart_query) > 0){
       while($product_item = mysqli_fetch_assoc($cart_query)){
          $product_name[] = $product_item['name'] .' ('. $product_item['cart_quantity'] .') ';
          $product_price = number_format($product_item['price'] * $product_item['cart_quantity']);
-         $price_total += ($product_price + $shipping_fee);
-      };
+         $price_total += $product_price;
+      }; $total = $price_total + $shipping_fee;
    };
    $total_product = implode(', ',$product_name);
 
@@ -35,7 +36,7 @@ if(isset($_POST['order_btn'])){
     user_id = '$_SESSION[user_id]',
     delivery_address = '$delivery_address',
     zipcode = '$zipcode',
-    total_price = '$price_total',
+    total_price = '$total',
     order_date = '$order_date',
     order_status = '$order_status',
     delivery_date = '$delivery_date',
@@ -48,6 +49,8 @@ if(isset($_POST['order_btn'])){
    $select_user_order = mysqli_query($conn, "SELECT * FROM user
    INNER JOIN cart
    ON user.user_id = cart.user_id
+   INNER JOIN product
+   ON cart.product_id = product.product_id
    INNER JOIN orders
    ON user.user_id = orders.user_id
    WHERE user.user_id = $_SESSION[user_id] 
@@ -57,12 +60,12 @@ if(isset($_POST['order_btn'])){
            $product_id = $rows['product_id'];
            $quantity = $rows['cart_quantity'];
            $order_id = $rows['order_id'];
+           $price = $rows['price'];
 
            $order_details_query = mysqli_query($conn, "INSERT INTO order_details SET
            order_id = $order_id,
            product_id = $product_id,
            ordered_quantity = $quantity,
-           subtotal_price = $product_price
            ") or die('query failed');
        
       
@@ -79,7 +82,7 @@ if(isset($_POST['order_btn'])){
          <h3>Thank you for Shopping!</h3>
          <div class='order-detail'>
             <span><?php echo $total_product ?></span>
-            <span class='total'> Total : ₱<?php echo $price_total ?>(Shipping Fee Added) /-  </span>
+            <span class='total'> Total : ₱<?php echo $total ?>(Shipping Fee Added) /-  </span>
          </div>
          <div class='customer-details'>
             <p> Your number : <span><?php echo $number ?></span> </p>
