@@ -117,8 +117,8 @@
                     <canvas id="myChart"></canvas>
                 </div>
                 <script>
-                    const labels = <?php echo json_encode($products)?>;
-                    const data = {
+                    var labels = <?php echo json_encode($products)?>;
+                    var data = {
                         labels: labels,
                         datasets: [{
                             label: '',
@@ -145,7 +145,7 @@
                         }]
                     };
 
-                    const config = {
+                    var config = {
                         type: 'bar',
                         data: data,
                         options: {
@@ -157,7 +157,7 @@
                         },
                     };
 
-                    const myChart = new Chart(
+                    var myChart = new Chart(
                         document.getElementById('myChart'),
                         config
                     );
@@ -167,6 +167,7 @@
                         <?php
                             $query = $conn->query("SELECT sum(total_price) AS SALES, DATE_FORMAT(order_date, '%M') AS MONTHLY
                             FROM orders
+                            WHERE order_status = 'delivered'
                             GROUP BY DATE_FORMAT(order_date, '%M');"); 
 
                             foreach($query as $data){
@@ -175,11 +176,11 @@
                             }
                         ?>
                 <div>
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart2"></canvas>
                 </div>
                 <script>
-                    const labels = <?php echo json_encode($month)?>;
-                    const data = {
+                    var labels = <?php echo json_encode($month)?>;
+                    var data = {
                         labels: labels,
                         datasets: [{
                             label: '',
@@ -206,7 +207,7 @@
                         }]
                     };
 
-                    const config = {
+                    var config = {
                         type: 'bar',
                         data: data,
                         options: {
@@ -218,8 +219,8 @@
                         },
                     };
 
-                    const myChart = new Chart(
-                        document.getElementById('myChart'),
+                    var myChart2 = new Chart(
+                        document.getElementById('myChart2'),
                         config
                     );
                 </script>
